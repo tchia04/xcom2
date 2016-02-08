@@ -46,7 +46,7 @@
 	PlatedArmor[label="Plated Armor\n(10 Alloy)", color=red];
 	EXOSuit[label="E.X.O. Suit (r)\n(5 Alloy, 2 ADVENT Trooper Corpse, 5 Elerium, 1 Elerium Core)", color=purple];
 	SpiderSuit[label="Spider Suit (r)\n(5 Alloy, 2 ADVENT Stun Lancer Corpse, 5 Elerium, 1 Elerium Core)", color=purple];
-	PoweredArmor[label="Powered Armor\n(20 Alloy, 5 Elerium)", color=blue];
+	PoweredArmor[label="Powered Armor\n(20 Alloy, 5 Elerium)", color=red];
 	WraithSuit[label="Wraith Suit (r)\n(50 Supplies, 10 Alloy, 5 Elerium, 1 Elerium Core)", color=purple];
 	WARSuit[label="W.A.R. Suit (r)\n(50 Supplies, 10 Alloy, 5 Elerium, 1 Elerium Core)", color=purple];
 
