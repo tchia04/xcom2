@@ -2,9 +2,6 @@
  	// Extracted from X2StrategyElement_DefaultTechs.uc
  	// Science Score: StartingScienceScore (0) + Skill Levels + Facility Bonuses
 
- 	// [label="", color=purple];
- 	// Weapons: red, Armor: blue, Autopsy: green, Plot: orange, Proving Grounds: purple, Misc: brown, Facilities: orange
-
  	// Research Projects: red
  	// Buildings: green
  	// Proving Grounds: purple
@@ -13,6 +10,27 @@
 
 	node[shape=box];
 	rankdir="LR";
+
+	// Initial Stuff
+	Engineering[label="Engineering", color=green]
+	Laboratory[label="Laboratory\n(125 Supplies, 35 Upkeep, 3 Power)", color=green]
+	Workshop[label="Workshop\n(125 Supplies, 35 Upkeep, 1 Power)", color=green]
+	PowerRelay[label="Power Relay\n(80 Supplies, 10 Upkeep, +3 Power)", color=green]
+	OfficerTrainingSchool[label="Guerrilla Tactics School\n(85 Supplies, 25 Upkeep, 3 Power)", color=green]
+	Workshop_AdditionalWorkbench[label="Additional Workbench\n(100 Supplies, 40 Upkeep, 2 Power)", color=green]
+	Laboratory_AdditionalResearchStation[label="Additional Research Station\n(125 Supplies, 40 Upkeep, 3 Power)", color=green]
+	PowerRelay_PowerConduit[label="Power Conduit\n(80 Supplies, 10 Upkeep, +2 Power)", color=green]
+	DefenseFacility_QuadTurrets[label="Quad Turrets\n(75 Supplies, 10 Upkeep, 2 Power)", color=green]
+	PsiChamber_SecondCell[label="Second Cell\n(225 Supplies, 15 Elerium, 50 Upkeep, 5 Power)", color=green]
+
+	T0_M1_WelcomeToLabs -> Engineering;
+	T0_M1_WelcomeToLabs -> Laboratory -> Laboratory_AdditionalResearchStation;
+	T0_M1_WelcomeToLabs -> Workshop -> Workshop_AdditionalWorkbench;
+	T0_M1_WelcomeToLabs -> PowerRelay;
+	PowerRelay -> PowerRelay_EleriumConduit;
+	PowerRelay -> PowerRelay_PowerConduit;
+	T0_M1_WelcomeToLabs -> OfficerTrainingSchool;
+
 
 	// Weapon Techs
  	ModularWeapons[label="Modular Weapons", color=red];
@@ -129,7 +147,6 @@
 	AdvancedGrenades -> EMPGrenadeMk2;
 	
 	//Bluescreen -> EMPGrenadeMk2;
-	T0_M1_WelcomeToLabs -> Engineering;
 	Engineering -> FlashbangGrenade;
 	Engineering -> Medikit;
 	Engineering -> SmokeGrenade;
@@ -154,7 +171,7 @@
 
 	AutopsyBerserker -> CombatStims;
 	AutopsyChryssalid -> Hellweave;
-	Tech_Elerium -> EleriumConduit;
+	Tech_Elerium -> PowerRelay_EleriumConduit;
 	AutopsyFaceless -> MimicBeacon;
 	HybridMaterials -> NanofiberVest;
 	AutopsySectoid -> MindShield;
@@ -180,28 +197,26 @@
 	AdvancedHeavyWeapons -> ShredstormCannon;
 
 	// Quests
-	T0_M1_WelcomeToLabs[color=black];
+	T0_M1_WelcomeToLabs[label="Game Start", color=black];
 	T2_M0_CompleteGuerillaOps[color=black];
 	ItemDrop[label="Item Drop", color=black];
 	PsiGateArtifact[label="Psionic Gate (Item)", color=black];
 	CorpseCyberus[label="Codex Brain (Item)", color=black];
 	BlacksiteDataCube[label="Blacksite Vial (Item)", color=black]
 	StasisSuitComponent[label="ADVENT Stasis Suit (Item)", color=black]
-	T5_M1_AutopsyTheAvatar[color=black];
 	T5_M2_BroadcastTheTruth[color=black];
 	T5_M3_FinalMission[color=black];
 
 	// Quest Items/Buildings
-	ShadowChamber[label="Shadow Chamber (building)\n(125 Supplies)", color=green]
-	ShadowChamber_CelestialGate[label="Upgraded Shadow Chamber (building)\n(200 Supplies)", color=green]
-	ProvingGrounds[label="Proving Grounds (building)\n(100 Supplies)", color=green]
-	AdvancedWarfareCenter[label="Advanced Warfare Center (building)\n(115 Supplies)", color=green]
-	UFODefense[label="Defense Matrix (building)\n(75 Supplies)", color=green]
-	ResistanceComms[label="Resistance Comms (building)\n(110 Supplies)", color=green]
-	PsiChamber[label="Psi Lab (building)\n(175 Supplies, 10 Elerium)", color=green]
-	Engineering[label="Engineering", color=green]
-	EleriumConduit[label="Elerium Conduit (building upgrade)", color=green]
-	AdditionalCommStation[label="Additional Comm Station (building upgrade)", color=green]
+	ShadowChamber[label="Shadow Chamber (building)\n(125 Supplies, 30 Upkeep, 5 Power)", color=green]
+	ShadowChamber_CelestialGate[label="Psionic Gate\n(200 Supplies, 50 Upkeep, 4 Power)", color=green]
+	ProvingGrounds[label="Proving Grounds\n(100 Supplies, 25 Upkeep, 3 Power)", color=green]
+	AdvancedWarfareCenter[label="Advanced Warfare Center\n(115 Supplies, 35 Upkeep, 3 Power)", color=green]
+	UFODefense[label="Defense Matrix (building)\n(75 Supplies, 10 Upkeep, 2 Power)", color=green]
+	ResistanceComms[label="Resistance Comms\n(110 Supplies, 25 Upkeep, 3 Power)", color=green]
+	PsiChamber[label="Psi Lab (building)\n(175 Supplies, 10 Elerium, 55 Upkeep, 5 Power)", color=green]
+	PowerRelay_EleriumConduit[label="Elerium Conduit\n(150 Supplies, 20 Elerium, 20 Upkeep, +6 Power)", color=green]
+	ResistanceComms_AdditionalCommStation[label="Additional Comm Station\n(125 Supplies, 35 Upkeep, 4 Power)", color=green]
 
 	// Upgrades
 	AssaultRifle_MG_Schematic[label="Magnetic Rifles\n(125 Supplies, 10 Alloys)\nMin. Engineering Score: 10", color=blue]
@@ -224,11 +239,15 @@
 	MediumPlatedArmor_Schematic[label="Predator Armor\n(150 Supplies, 20 Alloys, 6 ADVENT Trooper Corpses)\nMin. Engineering Score: 10", color=blue]
 	MediumPoweredArmor_Schematic[label="Warden Armor\n(300 Supplies, 40 Alloys, 20 Elerium)\nMin. Engineering Score: 20", color=blue]
 
-	T5_M1_AutopsyTheAvatar -> AutopsyAdventPsiWitch -> T5_M2_BroadcastTheTruth -> T5_M3_FinalMission;
+	AutopsyAdventPsiWitch -> T5_M2_BroadcastTheTruth -> T5_M3_FinalMission;
 	
+	// Stuff
+	MakeContact[label="Make Contact", color=black]
+	RadioRelays[label="Radio Relays", color=black]
+	BlackMarket[label="Black Market\n(Appears between 25\nand 35 days into the game.\nSeems dependent on some\nmission though)", color=black]
 
 	// Relationships/Tree
-	ResistanceRadio -> AdditionalCommStation;
+	
 
 	MagnetizedWeapons -> Pistol_MG_Schematic;
 	PlasmaRifle -> Pistol_BM_Schematic;
@@ -294,12 +313,18 @@
 
 	T0_M1_WelcomeToLabs -> T2_M0_CompleteGuerillaOps;
 	T2_M0_CompleteGuerillaOps -> ResistanceCommunications -> ResistanceRadio;
+	ResistanceRadio -> RadioRelays;
+	ResistanceRadio -> ResistanceComms_AdditionalCommStation;
 
-	BlacksiteDataCube -> BlacksiteData -> AlienEncryption;
-	CorpseCyberus -> AlienEncryption [style=dotted];
+	ResistanceComms -> ResistanceComms_AdditionalCommStation;
+	ResistanceCommunications -> MakeContact;
+
+
+	BlacksiteDataCube -> BlacksiteData;// -> AlienEncryption;
+	CorpseCyberus -> AlienEncryption;
 
 	ShadowChamber -> CodexBrainPt1;
-	CorpseCyberus -> CodexBrainPt1;
+	//CorpseCyberus -> CodexBrainPt1;
 	AlienBiotech -> CodexBrainPt1;
 
 	CodexBrainPt1 -> CodexBrainPt2;
@@ -312,7 +337,7 @@
 	ShadowChamber_CelestialGate -> PsiGate;
 
 	BlacksiteData -> AutopsyAdventPsiWitch;
-	AlienBiotech -> AutopsyAdventPsiWitch;
+	//AlienBiotech -> AutopsyAdventPsiWitch;
 	PsiGate -> AutopsyAdventPsiWitch;
 	ForgeStasisSuit -> AutopsyAdventPsiWitch;
 
@@ -336,9 +361,9 @@
 	AutopsyAdventOfficer -> ProvingGrounds;
 	AlienEncryption -> ShadowChamber;
 	AlienBiotech -> AdvancedWarfareCenter;
-	AutopsyAdventTurret -> UFODefense;
+	AutopsyAdventTurret -> UFODefense -> DefenseFacility_QuadTurrets;
 	ResistanceCommunications -> ResistanceComms;
-	Psionics -> PsiChamber;
+	Psionics -> PsiChamber -> PsiChamber_SecondCell;
 	PsiGateArtifact -> ShadowChamber_CelestialGate;
 
 	// Schematics
