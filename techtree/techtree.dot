@@ -1,0 +1,347 @@
+ digraph graphname {
+ 	// Extracted from X2StrategyElement_DefaultTechs.uc
+ 	// Science Score: StartingScienceScore (0) + Skill Levels + Facility Bonuses
+
+ 	// [label="", color=purple];
+ 	// Weapons: red, Armor: blue, Autopsy: green, Plot: orange, Proving Grounds: purple, Misc: brown, Facilities: orange
+
+ 	// Research Projects: red
+ 	// Buildings: green
+ 	// Proving Grounds: purple
+ 	// Items: blue
+ 	// Golden Path: orange
+
+	node[shape=box];
+	rankdir="LR";
+
+	// Weapon Techs
+ 	ModularWeapons[label="Modular Weapons", color=red];
+	GaussWeapons[label="Gauss Weapons", color=red];
+	MagnetizedWeapons[label="Magnetic Weapons", color=red];
+	PlasmaRifle[label="Plasma Rifle\n(10 Alloy, 10 Elerium)", color=red];
+	HeavyPlasma[label="Beam Cannon\n(5 Alloy, 5 Elerium)", color=red];
+	PlasmaSniper[label="Plasma Lance\n(5 Alloy, 5 Elerium)", color=red];
+	AlloyCannon[label="Storm Gun\n(10 Alloy)", color=red];
+
+	// Armor Techs
+	HybridMaterials[label="Hybrid Materials\n(2 ADVENT Trooper Corpse)", color=red];
+	PlatedArmor[label="Plated Armor\n(10 Alloy)", color=red];
+	EXOSuit[label="E.X.O. Suit (r)\n(5 Alloy, 2 ADVENT Trooper Corpse, 5 Elerium, 1 Elerium Core)", color=purple];
+	SpiderSuit[label="Spider Suit (r)\n(5 Alloy, 2 ADVENT Stun Lancer Corpse, 5 Elerium, 1 Elerium Core)", color=purple];
+	PoweredArmor[label="Powered Armor\n(20 Alloy, 5 Elerium)", color=blue];
+	WraithSuit[label="Wraith Suit (r)\n(50 Supplies, 10 Alloy, 5 Elerium, 1 Elerium Core)", color=purple];
+	WARSuit[label="W.A.R. Suit (r)\n(50 Supplies, 10 Alloy, 5 Elerium, 1 Elerium Core)", color=purple];
+
+	// Elerium Tech
+	Tech_Elerium[label="Elerium\n(20 Elerium)", color=red];
+
+	// Psionics
+	Psionics[label="Psionics\n(5 Elerium)", color=red];
+
+	// Alien Facility Lead
+	Tech_AlienFacilityLead[label="Facility Lead (r)\n(50 Intel, 1 Facility Lead)" color=red];
+
+	// Intel Techs
+	Tech_AdventDatapad[label="ADVENT Datapad Decryption (r)\n(1 ADVENT Datapad)", color=red];
+	Tech_AlienDatapad[label="Alien Data Cache Decryption (r)\n(1 Alien Data Cache)", color=red];
+
+	// Autopsy Techs
+	AlienBiotech[label="Alien Biotech", color=red];
+	AutopsySectoid[label="Sectoid Autopsy\n(1 Corpse, 6 for instant)\nMin Science Score: 10", color=red];
+	AutopsyViper[label="Viper Autopsy\n(1 Corpse, 5 for instant)", color=red];
+	AutopsyMuton[label="Muton Autopsy\n(1 Corpse, 5 for instant)", color=red];
+	AutopsyBerserker[label="Berserker Autopsy\n(1 Corpse, 5 for instant)", color=red];
+	AutopsyArchon[label="Archon Autopsy\n(1 Corpse, 3 for instant)", color=red];
+	AutopsyGatekeeper[label="Gatekeeper Autopsy\n(1 Corpse, 3 for instant)", color=red];
+	AutopsyAndromedon[label="Andromedon Autopsy\n(1 Corpse, 4 for instant)", color=red];
+	AutopsyFaceless[label="Faceless Autopsy\n(1 Corpse, 3 for instant)", color=red];
+	AutopsyChryssalid[label="Chryssalid Autopsy\n(1 Corpse, 15 for instant)", color=red];
+	AutopsyAdventTrooper[label="ADVENT Trooper Autopsy\n(1 Corpse, 10 for instant)", color=red];
+	AutopsyAdventStunLancer[label="ADVENT Stun Lancer Autopsy\n(1 Corpse, 4 for instant)", color=red];
+	AutopsyAdventShieldbearer[label="ADVENT Shieldbearer Autopsy\n(1 Corpse, 4 for instant)", color=red];
+	AutopsyAdventMEC[label="ADVENT MEC Breakdown\n(1 Corpse, 3 for instant)", color=red];
+	AutopsyAdventTurret[label="ADVENT Turret Breakdown\n(1 Corpse, 3 for instant)", color=red];
+	AutopsySectopod[label="Sectopod Breakdown\n(1 Corpse, 3 for instant)", color=red];
+
+	// Golden Path Techs & Shadow Chamber Projects
+	ResistanceCommunications[label="Resistance Communications", color=orange];
+	ResistanceRadio[label="Resistance Radio", color=orange];
+	AutopsyAdventOfficer[label="ADVENT Officer Autopsy", color=orange];
+	AlienEncryption[label="Alien Encryption", color=orange];
+	CodexBrainPt1[label="Codex Brain", color=orange];
+	CodexBrainPt2[label="Encrypted Codex Data", color=orange];
+	BlacksiteData[label="Blacksite Vial", color=orange];
+	ForgeStasisSuit[label="Recovered ADVENT Stasis Suit", color=orange];
+	PsiGate[label="Psionic Gate\n(65 Supplies, 10 Elerium)", color=orange];
+	AutopsyAdventPsiWitch[label="Avatar Autopsy", color=orange];
+
+	// Proving Grounds Projects
+	Skulljack[label="Skulljack (r)\n(50 Supplies)", color=orange]
+	ExperimentalAmmo[label="Experimental Ammo (r)\n(1 Elerium Core)", color=purple];
+	ExperimentalGrenade[label="Experimental Grenade (r)\n(1 Elerium Core)", color=purple];
+	ExperimentalArmor[label="Experimental Armor (r)\n(1 Elerium Core)", color=purple];
+	Bluescreen[label="Bluescreen Protocol", color=purple];
+	BattlefieldMedicine[label="Battlefield Medicine\n(50 Supplies, 1 Elerium Core, 2 Viper Corpses)", color=purple];
+	PlasmaGrenade[label="Plasma Grenade\n(75 Supplies, 1 Elerium Core, 5 Alloy, 5 Elerium)", color=purple];
+	AdvancedGrenades[label="Advanced Explosives\n(50 Supplies, 1 Elerium Core, 5 Alloy, 5 Elerium)", color=purple];
+	Skullmining[label="Skullmining\n(75 Supplies, 1 Elerium Core)", color=purple];
+	HeavyWeapons[label="Experimental Heavy Weapon (r)\n(1 Elerium Core)", color=purple];
+	AdvancedHeavyWeapons[label="Experimental Powered Weapon (r)\n(50 Supplies, 1 Elerium Core)", color=purple];
+
+	// Ammo
+	APRounds[label="A.P. Rounds", color=blue];
+	TracerRounds[label="Tracer Rounds", color=blue];
+	IncendiaryRounds[label="Dragon Rounds", color=blue];
+	TalonRounds[label="Talon Rounds", color=blue];
+	VenomRounds[label="Venom Roundss", color=blue];
+	BluescreenRounds[label="Bluescreen Rounds\n(75 Supplies)", color=blue];
+
+	ExperimentalAmmo -> APRounds;
+	ExperimentalAmmo -> TracerRounds;
+	ExperimentalAmmo -> IncendiaryRounds;
+	ExperimentalAmmo -> TalonRounds;
+	ExperimentalAmmo -> VenomRounds;
+	Bluescreen -> BluescreenRounds;
+
+	// Grenades
+	Firebomb[label="Incendiary Grenade", color=blue];
+	FirebombMK2[label="Incendiary Bomb", color=blue];
+	//AlienGrenade[label="Plasma Grenade", color=blue];
+	FlashbangGrenade[label="Flashbang Grenade\n(35 Supplies)", color=blue];
+	SmokeGrenade[label="Smoke Grenade\n(25 Supplies)", color=blue];
+	SmokeGrenadeMk2[label="Smoke Bomb\n(50 Supplies)", color=blue];
+	GasGrenade[label="Gas Grenade", color=blue];
+	GasGrenadeMk2[label="Gas Bomb", color=blue];
+	AcidGrenade[label="Acid Grenade", color=blue];
+	AcidGrenadeMk2[label="Acid Bomb", color=blue];
+	EMPGrenade[label="EMP Grenade", color=blue];
+	EMPGrenadeMk2[label="EMP Bomb", color=blue];
+	ProximityMine[label="Proximity Mine", color=blue];
+
+	ExperimentalGrenade -> Firebomb -> FirebombMK2;
+	ExperimentalGrenade -> AcidGrenade -> AcidGrenadeMk2;
+	ExperimentalGrenade -> EMPGrenade -> EMPGrenadeMk2;
+	AdvancedGrenades -> SmokeGrenadeMk2;
+	AdvancedGrenades -> FirebombMK2;
+	AdvancedGrenades -> GasGrenadeMk2;
+	AdvancedGrenades -> AcidGrenadeMk2;
+	AdvancedGrenades -> EMPGrenadeMk2; // ?
+	Engineering -> FlashbangGrenade;
+	AutopsyAndromedon -> ProximityMine;
+	SmokeGrenade -> SmokeGrenadeMk2;
+
+	// Engineering Items
+	CombatStims[label="Overdrive Serum\n(1 Berserker Corpse, 35 Supplies)", color=blue]
+	NanoMedikit[label="Nanomedikit\n(1 Viper Corpse, 50 Supplies)", color=blue];
+	ProximityMine[label="Proximity Mine\n(100 Supplies)", color=blue];
+	BattleScanner[label="Battle Scanner\n(30 Supplies)", color=blue];
+	MimicBeacon[label="Mimic Beacon\n(2 Faceless Corpses, 50 Supplies)", color=blue];
+	NanofiberVest[label="Nanoscale Vest\n(2 ADVENT Trooper Corpses, 30 Supplies)", color=blue];
+	Hellweave[label="Hellweave\n(2 Chryssalid Corpses, 65 Supplies)", color=blue];
+	PlatedVest[label="Plated Vest", color=blue];
+	HazmatVest[label="Hazmat Vest", color=blue];
+	StasisVest[label="Stasis Vest", color=blue];
+	Medikit[label="Medikit\n(35 Supplies)", color=blue];
+	MindShield[label="Mindshield\n(1 Sectoid Corpse, 45 Supplies)", color=blue];
+
+	AutopsyBerserker -> CombatStims;
+	AutopsyChryssalid -> Hellweave;
+	Tech_Elerium -> EleriumConduit;
+	AutopsyFaceless -> MimicBeacon;
+	HybridMaterials -> NanofiberVest;
+	AutopsySectoid -> MindShield;
+	AutopsyAdventTrooper -> BattleScanner;
+
+	ExperimentalArmor -> PlatedVest;
+	ExperimentalArmor -> HazmatVest;
+	ExperimentalArmor -> StasisVest;
+
+	// Experimental Weapons
+	ShredderGun[label="Shredder Gun", color=blue];
+	Flamethrower[label="Flamethrower", color=blue];
+	FlamethrowerMk2[label="Hellfire Projector", color=blue];
+	BlasterLauncher[label="Blaster Launcher", color=blue];
+	PlasmaBlaster[label="Plasma Blaster", color=blue];
+	ShredstormCannon[label="Shredstorm Cannon", color=blue];
+
+	HeavyWeapons -> ShredderGun;
+	HeavyWeapons -> Flamethrower;
+	AdvancedHeavyWeapons -> FlamethrowerMk2;
+	AdvancedHeavyWeapons -> BlasterLauncher;
+	AdvancedHeavyWeapons -> PlasmaBlaster;
+	AdvancedHeavyWeapons -> ShredstormCannon;
+
+	// Quests
+	T0_M1_WelcomeToLabs[color=black];
+	T2_M0_CompleteGuerillaOps[color=black];
+	ItemDrop[label="Item Drop", color=black];
+	PsiGateArtifact[label="Psionic Gate (Item)", color=black];
+	CorpseCyberus[label="Codex Brain (Item)", color=black];
+	BlacksiteDataCube[label="Blacksite Vial (Item)", color=black]
+	StasisSuitComponent[label="ADVENT Stasis Suit (Item)", color=black]
+	T5_M1_AutopsyTheAvatar[color=black];
+	T5_M2_BroadcastTheTruth[color=black];
+	T5_M3_FinalMission[color=black];
+
+	// Quest Items/Buildings
+	ShadowChamber[label="Shadow Chamber (building)\n(125 Supplies)", color=green]
+	ShadowChamber_CelestialGate[label="Upgraded Shadow Chamber (building)\n(200 Supplies)", color=green]
+	ProvingGrounds[label="Proving Grounds (building)\n(100 Supplies)", color=green]
+	AdvancedWarfareCenter[label="Advanced Warfare Center (building)\n(115 Supplies)", color=green]
+	UFODefense[label="Defense Matrix (building)\n(75 Supplies)", color=green]
+	ResistanceComms[label="Resistance Comms (building)\n(110 Supplies)", color=green]
+	PsiChamber[label="Psi Lab (building)\n(175 Supplies, 10 Elerium)", color=green]
+	Engineering[label="Engineering", color=green]
+	EleriumConduit[label="Elerium Conduit (building upgrade)", color=green]
+	AdditionalCommStation[label="Additional Comm Station (building upgrade)", color=green]
+
+	// Upgrades
+	AssaultRifle_MG_Schematic[label="Magnetic Rifles\n(125 Supplies, 10 Alloys)\nMin. Engineering Score: 10", color=blue]
+	AssaultRifle_BM_Schematic[label="Plasma Rifles\n(250 Supplies, 20 Alloys, 10 Elerium)\nMin. Engineering Score: 20", color=blue]
+	Shotgun_MG_Schematic[label="Shard Guns\n(75 Supplies, 5 Alloys)\nMin. Engineering Score: 15", color=blue]
+	Shotgun_BM_Schematic[label="Storm Guns\n(140 Supplies, 10 Alloys, 10 Elerium)\nMin. Engineering Score: 25", color=blue]
+	Cannon_MG_Schematic[label="Mag Cannon\n(150 Supplies, 10 Alloys)\nMin. Engineering Score: 15", color=blue]
+	Cannon_BM_Schematic[label="Beam Cannon\n(250 Supplies, 20 Alloys, 10 Elerium)\nMin. Engineering Score: 25", color=blue]
+	SniperRifle_MG_Schematic[label="Gauss Rifle\n(150 Supplies, 10 Alloys)\nMin. Engineering Score: 15", color=blue]
+	SniperRifle_BM_Schematic[label="Plasma Lance\n(300 Supplies, 20 Alloys, 10 Elerium)\nMin. Engineering Score: 25", color=blue]
+	Pistol_MG_Schematic[label="Mag Pistol\n(60 Supplies, 5 Alloys)\nMin. Engineering Score: 10", color=blue]
+	Pistol_BM_Schematic[label="Beam Pistol\n(125 Supplies, 10 Alloys, 10 Elerium)\nMin. Engineering Score: 20", color=blue]
+	Sword_MG_Schematic[label="Arc Blade\n(90 Supplies, 10 Alloys)\nMin. Engineering Score: 10", color=blue]
+	Sword_BM_Schematic[label="Fusion Blade\n(180 Supplies, 10 Alloys, 10 Elerium)\nMin. Engineering Score: 20", color=blue]
+	Gremlin_MG_Schematic[label="GREMLIN Mark II\n(50 Supplies, 5 Alloys)\nMin. Engineering Score: 15", color=blue]
+	Gremlin_BM_Schematic[label="GREMLIN Mark III\n(75 Supplies, 10 Alloys, 10 Elerium)\nMin. Engineering Score: 20", color=blue]
+	PsiAmp_MG_Schematic[label="Advanced Psi Amp\n(70 Supplies, 10 Alloys, 10 Elerium, 2 Sectoid Corpse)\nMin. Engineering Score: 15", color=blue]
+	PsiAmp_BM_Schematic[label="Alien Psi Amp\n(200 Supplies, 10 Alloys, 15 Elerium, 1 Gatekeeper Corpse)\nMin. Engineering Score: 20", color=blue]
+	GrenadeLauncher_MG_Schematic[label="Advanced Grenade Launcher\n(75 Supplies, 10 Alloys)\nMin. Engineering Score: 10", color=blue]
+	MediumPlatedArmor_Schematic[label="Predator Armor\n(150 Supplies, 20 Alloys, 6 ADVENT Trooper Corpses)\nMin. Engineering Score: 10", color=blue]
+	MediumPoweredArmor_Schematic[label="Warden Armor\n(300 Supplies, 40 Alloys, 20 Elerium)\nMin. Engineering Score: 20", color=blue]
+
+	T5_M1_AutopsyTheAvatar -> AutopsyAdventPsiWitch -> T5_M2_BroadcastTheTruth -> T5_M3_FinalMission;
+	
+
+	// Relationships/Tree
+	ResistanceRadio -> AdditionalCommStation;
+
+	MagnetizedWeapons -> Pistol_MG_Schematic;
+	PlasmaRifle -> Pistol_BM_Schematic;
+	AutopsyAdventStunLancer -> Sword_MG_Schematic;
+	AutopsyArchon -> Sword_BM_Schematic;
+	AutopsyAdventMEC -> Gremlin_MG_Schematic;
+	AutopsySectopod -> Gremlin_BM_Schematic;
+	Psionics -> PsiAmp_MG_Schematic;
+	AutopsyGatekeeper -> PsiAmp_BM_Schematic;
+	AutopsyMuton -> GrenadeLauncher_MG_Schematic;
+	PlatedArmor -> MediumPlatedArmor_Schematic;
+	PoweredArmor -> MediumPoweredArmor_Schematic;
+
+
+
+	T0_M1_WelcomeToLabs -> ModularWeapons;
+	ModularWeapons -> MagnetizedWeapons -> GaussWeapons;
+
+ 	Tech_Elerium -> PlasmaRifle;
+ 	PlasmaRifle -> HeavyPlasma;
+ 	PlasmaRifle -> PlasmaSniper;
+ 	PlasmaRifle -> AlloyCannon;
+ 	AutopsySectoid -> Psionics;
+
+
+ 	T0_M1_WelcomeToLabs -> HybridMaterials -> PlatedArmor -> EXOSuit;
+ 	PlatedArmor -> SpiderSuit;
+ 	Tech_Elerium -> PoweredArmor;
+ 	PoweredArmor -> WraithSuit;
+ 	PoweredArmor -> WARSuit;
+
+ 	GaussWeapons -> Tech_Elerium;
+ 	PlatedArmor -> Tech_Elerium;
+
+ 	T0_M1_WelcomeToLabs -> AlienBiotech; // Technically not the case, but makes the graph look prettier
+	T0_M1_WelcomeToLabs -> ItemDrop -> Tech_AlienFacilityLead;
+	ItemDrop -> Tech_AdventDatapad;
+	ItemDrop -> Tech_AlienDatapad;
+
+	AlienBiotech -> AutopsySectoid;
+	AlienBiotech -> AutopsyViper -> BattlefieldMedicine -> NanoMedikit;
+	AlienBiotech -> AutopsyMuton;
+	AlienBiotech -> AutopsyBerserker;
+	AlienBiotech -> AutopsyArchon;
+	AlienBiotech -> AutopsyGatekeeper;
+	AlienBiotech -> AutopsyAndromedon;
+	AlienBiotech -> AutopsyFaceless;
+	AlienBiotech -> AutopsyChryssalid;
+
+	AlienBiotech -> AutopsyAdventOfficer;
+	//AlienBiotech -> AutopsyAdventTrooper;
+	AutopsyAdventOfficer -> AutopsyAdventTrooper;
+	//AlienBiotech -> AutopsyAdventStunLancer;
+	AutopsyAdventOfficer -> AutopsyAdventStunLancer;
+	//AlienBiotech -> AutopsyAdventShieldbearer;
+	AutopsyAdventOfficer -> AutopsyAdventShieldbearer;
+	//AlienBiotech -> AutopsyAdventMEC;
+	AutopsyAdventOfficer -> AutopsyAdventMEC;
+	//AlienBiotech -> AutopsyAdventTurret;
+	AutopsyAdventOfficer -> AutopsyAdventTurret;
+	//AlienBiotech -> AutopsySectopod;
+	AutopsyAdventOfficer -> AutopsySectopod;
+
+	T0_M1_WelcomeToLabs -> T2_M0_CompleteGuerillaOps;
+	T2_M0_CompleteGuerillaOps -> ResistanceCommunications -> ResistanceRadio;
+
+	BlacksiteDataCube -> BlacksiteData -> AlienEncryption;
+	CorpseCyberus -> AlienEncryption [style=dotted];
+
+	ShadowChamber -> CodexBrainPt1;
+	CorpseCyberus -> CodexBrainPt1;
+	AlienBiotech -> CodexBrainPt1;
+
+	CodexBrainPt1 -> CodexBrainPt2;
+
+	ShadowChamber -> BlacksiteData;
+	StasisSuitComponent -> ForgeStasisSuit;
+	ShadowChamber -> ForgeStasisSuit;
+
+	ShadowChamber -> ShadowChamber_CelestialGate;
+	ShadowChamber_CelestialGate -> PsiGate;
+
+	BlacksiteData -> AutopsyAdventPsiWitch;
+	AlienBiotech -> AutopsyAdventPsiWitch;
+	PsiGate -> AutopsyAdventPsiWitch;
+	ForgeStasisSuit -> AutopsyAdventPsiWitch;
+
+	ProvingGrounds -> ExperimentalAmmo;
+	ProvingGrounds -> Skulljack;
+	ProvingGrounds -> ExperimentalGrenade;
+	//ProvingGrounds -> ExperimentalArmor;
+	AutopsyAdventShieldbearer -> ExperimentalArmor;
+
+	//ProvingGrounds -> Bluescreen;
+	AutopsyAdventMEC -> Bluescreen;
+
+	AutopsyMuton -> PlasmaGrenade;
+	PlasmaGrenade -> AdvancedGrenades;
+
+	Skulljack -> Skullmining;
+	EXOSuit -> HeavyWeapons;
+	WARSuit -> AdvancedHeavyWeapons;
+
+	// Buildings
+	AutopsyAdventOfficer -> ProvingGrounds;
+	AlienEncryption -> ShadowChamber;
+	AlienBiotech -> AdvancedWarfareCenter;
+	AutopsyAdventTurret -> UFODefense;
+	ResistanceCommunications -> ResistanceComms;
+	Psionics -> PsiChamber;
+	PsiGateArtifact -> ShadowChamber_CelestialGate;
+
+	// Schematics
+	MagnetizedWeapons -> AssaultRifle_MG_Schematic;
+	PlasmaRifle -> AssaultRifle_BM_Schematic;
+	MagnetizedWeapons -> Shotgun_MG_Schematic;
+	AlloyCannon -> Shotgun_BM_Schematic;
+	GaussWeapons -> Cannon_MG_Schematic;
+	HeavyPlasma -> Cannon_BM_Schematic;
+	GaussWeapons -> SniperRifle_MG_Schematic;
+	PlasmaSniper -> SniperRifle_BM_Schematic;
+
+
+ }
