@@ -114,21 +114,29 @@
 	GasGrenadeMk2[label="Gas Bomb", color=blue];
 	AcidGrenade[label="Acid Grenade", color=blue];
 	AcidGrenadeMk2[label="Acid Bomb", color=blue];
-	EMPGrenade[label="EMP Grenade", color=blue];
-	EMPGrenadeMk2[label="EMP Bomb", color=blue];
+	EMPGrenade[label="EMP Grenade\n(50 Supplies)", color=blue];
+	EMPGrenadeMk2[label="EMP Bomb\n(50 Supplies)", color=blue];
 	ProximityMine[label="Proximity Mine", color=blue];
 
 	ExperimentalGrenade -> Firebomb -> FirebombMK2;
 	ExperimentalGrenade -> AcidGrenade -> AcidGrenadeMk2;
-	ExperimentalGrenade -> EMPGrenade -> EMPGrenadeMk2;
+	ExperimentalGrenade -> GasGrenade -> GasGrenadeMk2;
+	Bluescreen -> EMPGrenade  -> EMPGrenadeMk2;
 	AdvancedGrenades -> SmokeGrenadeMk2;
 	AdvancedGrenades -> FirebombMK2;
 	AdvancedGrenades -> GasGrenadeMk2;
 	AdvancedGrenades -> AcidGrenadeMk2;
-	AdvancedGrenades -> EMPGrenadeMk2; // ?
+	AdvancedGrenades -> EMPGrenadeMk2;
+	
+	//Bluescreen -> EMPGrenadeMk2;
+	T0_M1_WelcomeToLabs -> Engineering;
 	Engineering -> FlashbangGrenade;
+	Engineering -> Medikit;
+	Engineering -> SmokeGrenade;
 	AutopsyAndromedon -> ProximityMine;
 	SmokeGrenade -> SmokeGrenadeMk2;
+	Medikit -> NanoMedikit;
+	
 
 	// Engineering Items
 	CombatStims[label="Overdrive Serum\n(1 Berserker Corpse, 35 Supplies)", color=blue]
