@@ -8,6 +8,11 @@
  	// Items: blue
  	// Golden Path: orange
 
+splines=polyline;
+sep="+25,25";
+overlap=scalexy;
+nodesep=0.6;
+
 	node[shape=box];
 	rankdir="LR";
 
