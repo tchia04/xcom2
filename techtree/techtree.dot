@@ -1,259 +1,224 @@
- digraph graphname {
- 	// Extracted from X2StrategyElement_DefaultTechs.uc
- 	// Science Score: StartingScienceScore (0) + Skill Levels + Facility Bonuses
+digraph graphname {
+	splines=polyline;sep="+25,25";overlap=scalexy;nodesep=0.6;node[shape=none];rankdir="LR";
+	// Definitions
+	"T0_M1_WelcomeToLabs"[fontcolor="#ffffff", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#000000"><tr><td><b>Operation Gatecrasher</b></td></tr></table>>];
+	"T2_M0_CompleteGuerillaOps"[fontcolor="#ffffff", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#000000"><tr><td><b>T2_M0_CompleteGuerillaOps</b></td></tr></table>>];
+	"T5_M2_BroadcastTheTruth"[fontcolor="#ffffff", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#000000"><tr><td><b>T5_M2_BroadcastTheTruth</b></td></tr></table>>];
+	"T5_M3_FinalMission"[fontcolor="#ffffff", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#000000"><tr><td><b>T5_M3_FinalMission</b></td></tr></table>>];
+	"EquipPCS"[fontcolor="#ffffff", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#000000"><tr><td><b>Equip Personal Combat Sims<br/>(Min. Squaddie Rank)</b></td></tr></table>>];
+	"WeaponUpgrades"[fontcolor="#ffffff", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#000000"><tr><td><b>Apply Weapon Upgrades</b></td></tr></table>>];
+	"MakeContact"[fontcolor="#ffffff", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#000000"><tr><td><b>Make Contact</b></td></tr></table>>];
+	"RadioRelays"[fontcolor="#ffffff", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#000000"><tr><td><b>Radio Relays</b></td></tr></table>>];
+	"BlackMarket"[fontcolor="#ffffff", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#000000"><tr><td><b>Black Market</b></td></tr></table>>];
+	"FacilityLeadDrop"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#A000A0"><tr><td><b>Facility Lead (Item Drop)</b></td></tr></table>>];
+	"AdventDatapadDrop"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#A000A0"><tr><td><b>ADVENT Datapad (Item Drop)</b></td></tr></table>>];
+	"AlienDatapadDrop"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#A000A0"><tr><td><b>Alien Data Cache (Item Drop)</b></td></tr></table>>];
+	"Engineering"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Engineering</b></td></tr></table>>];
+	"Workshop"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Workshop</b></td></tr><tr><td bgcolor="#ffffff">125 Supplies, 35 Upkeep, 1 Power</td></tr><tr><td bgcolor="#cccccc">125 Supplies, 35 Upkeep, 1 Power</td></tr><tr><td bgcolor="#999999">125 Supplies, 35 Upkeep, 1 Power</td></tr><tr><td bgcolor="#666666">150 Supplies, 35 Upkeep, 1 Power</td></tr></table>>];
+	"Workshop_AdditionalWorkbench"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Additional Workbench</b></td></tr><tr><td bgcolor="#ffffff">100 Supplies, 40 Upkeep, 2 Power</td></tr><tr><td bgcolor="#cccccc">100 Supplies, 40 Upkeep, 2 Power</td></tr><tr><td bgcolor="#999999">100 Supplies, 40 Upkeep, 2 Power</td></tr><tr><td bgcolor="#666666">150 Supplies, 40 Upkeep, 2 Power</td></tr></table>>];
+	"Laboratory"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Laboratory</b></td></tr><tr><td bgcolor="#ffffff">125 Supplies, 35 Upkeep, 3 Power</td></tr><tr><td bgcolor="#cccccc">125 Supplies, 35 Upkeep, 3 Power</td></tr><tr><td bgcolor="#999999">125 Supplies, 35 Upkeep, 3 Power</td></tr><tr><td bgcolor="#666666">150 Supplies, 35 Upkeep, 3 Power</td></tr></table>>];
+	"Laboratory_AdditionalResearchStation"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Additional Research Station</b></td></tr><tr><td bgcolor="#ffffff">125 Supplies, 40 Upkeep, 3 Power</td></tr><tr><td bgcolor="#cccccc">125 Supplies, 40 Upkeep, 3 Power</td></tr><tr><td bgcolor="#999999">125 Supplies, 40 Upkeep, 3 Power</td></tr><tr><td bgcolor="#666666">175 Supplies, 40 Upkeep, 3 Power</td></tr></table>>];
+	"PowerRelay"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Power Relay</b></td></tr><tr><td bgcolor="#ffffff">80 Supplies, 10 Upkeep, +3 Power</td></tr><tr><td bgcolor="#cccccc">80 Supplies, 10 Upkeep, +3 Power</td></tr><tr><td bgcolor="#999999">80 Supplies, 10 Upkeep, +3 Power</td></tr><tr><td bgcolor="#666666">100 Supplies, 10 Upkeep, +3 Power</td></tr></table>>];
+	"PowerRelay_PowerConduit"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Power Conduit</b></td></tr><tr><td bgcolor="#ffffff">80 Supplies, 10 Upkeep, +2 Power</td></tr><tr><td bgcolor="#cccccc">80 Supplies, 10 Upkeep, +2 Power</td></tr><tr><td bgcolor="#999999">80 Supplies, 10 Upkeep, +2 Power</td></tr><tr><td bgcolor="#666666">100 Supplies, 10 Upkeep, +2 Power</td></tr></table>>];
+	"PowerRelay_EleriumConduit"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Elerium Conduit</b></td></tr><tr><td bgcolor="#ffffff">150 Supplies, 20 Elerium, 20 Upkeep, +6 Power</td></tr><tr><td bgcolor="#cccccc">150 Supplies, 20 Elerium, 20 Upkeep, +6 Power</td></tr><tr><td bgcolor="#999999">150 Supplies, 20 Elerium, 20 Upkeep, +6 Power</td></tr><tr><td bgcolor="#666666">300 Supplies, 35 Elerium, 20 Upkeep, +6 Power</td></tr></table>>];
+	"OfficerTrainingSchool"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Guerrilla Tactics School</b></td></tr><tr><td bgcolor="#ffffff">85 Supplies, 25 Upkeep, 3 Power</td></tr><tr><td bgcolor="#cccccc">85 Supplies, 25 Upkeep, 3 Power</td></tr><tr><td bgcolor="#999999">85 Supplies, 25 Upkeep, 3 Power</td></tr><tr><td bgcolor="#666666">100 Supplies, 25 Upkeep, 3 Power</td></tr></table>>];
+	"DefenseFacility_QuadTurrets"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Quad Turrets</b></td></tr><tr><td bgcolor="#ffffff">75 Supplies, 10 Upkeep, 2 Power</td></tr><tr><td bgcolor="#cccccc">75 Supplies, 10 Upkeep, 2 Power</td></tr><tr><td bgcolor="#999999">75 Supplies, 10 Upkeep, 2 Power</td></tr><tr><td bgcolor="#666666">125 Supplies, 10 Upkeep, 2 Power</td></tr></table>>];
+	"ShadowChamber"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Shadow Chamber</b></td></tr><tr><td bgcolor="#ffffff">125 Supplies, 30 Upkeep, 5 Power</td></tr><tr><td bgcolor="#cccccc">125 Supplies, 30 Upkeep, 5 Power</td></tr><tr><td bgcolor="#999999">125 Supplies, 30 Upkeep, 5 Power</td></tr><tr><td bgcolor="#666666">200 Supplies, 30 Upkeep, 5 Power</td></tr></table>>];
+	"ShadowChamber_CelestialGate"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Psionic Gate</b></td></tr><tr><td bgcolor="#ffffff">200 Supplies, 50 Upkeep, 4 Power</td></tr><tr><td bgcolor="#cccccc">200 Supplies, 50 Upkeep, 4 Power</td></tr><tr><td bgcolor="#999999">200 Supplies, 50 Upkeep, 4 Power</td></tr><tr><td bgcolor="#666666">300 Supplies, 50 Upkeep, 4 Power</td></tr></table>>];
+	"ProvingGrounds"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Proving Grounds</b></td></tr><tr><td bgcolor="#ffffff">100 Supplies, 25 Upkeep, 3 Power</td></tr><tr><td bgcolor="#cccccc">100 Supplies, 25 Upkeep, 3 Power</td></tr><tr><td bgcolor="#999999">100 Supplies, 25 Upkeep, 3 Power</td></tr><tr><td bgcolor="#666666">125 Supplies, 25 Upkeep, 3 Power</td></tr></table>>];
+	"AdvancedWarfareCenter"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Advanced Warfare Center</b></td></tr><tr><td bgcolor="#ffffff">115 Supplies, 35 Upkeep, 3 Power</td></tr><tr><td bgcolor="#cccccc">115 Supplies, 35 Upkeep, 3 Power</td></tr><tr><td bgcolor="#999999">115 Supplies, 35 Upkeep, 3 Power</td></tr><tr><td bgcolor="#666666">175 Supplies, 35 Upkeep, 3 Power</td></tr></table>>];
+	"UFODefense"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Defense Matrix</b></td></tr><tr><td bgcolor="#ffffff">75 Supplies, 10 Upkeep, 2 Power</td></tr><tr><td bgcolor="#cccccc">75 Supplies, 10 Upkeep, 2 Power</td></tr><tr><td bgcolor="#999999">75 Supplies, 10 Upkeep, 2 Power</td></tr><tr><td bgcolor="#666666">150 Supplies, 10 Upkeep, 2 Power</td></tr></table>>];
+	"ResistanceComms"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Resistance Comms</b></td></tr><tr><td bgcolor="#ffffff">110 Supplies, 25 Upkeep, 3 Power</td></tr><tr><td bgcolor="#cccccc">110 Supplies, 25 Upkeep, 3 Power</td></tr><tr><td bgcolor="#999999">110 Supplies, 25 Upkeep, 3 Power</td></tr><tr><td bgcolor="#666666">160 Supplies, 25 Upkeep, 3 Power</td></tr></table>>];
+	"ResistanceComms_AdditionalCommStation"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Additional Comm Station</b></td></tr><tr><td bgcolor="#ffffff">125 Supplies, 35 Upkeep, 4 Power</td></tr><tr><td bgcolor="#cccccc">125 Supplies, 35 Upkeep, 4 Power</td></tr><tr><td bgcolor="#999999">125 Supplies, 35 Upkeep, 4 Power</td></tr><tr><td bgcolor="#666666">190 Supplies, 35 Upkeep, 4 Power</td></tr></table>>];
+	"PsiChamber"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Psi Lab</b></td></tr><tr><td bgcolor="#ffffff">175 Supplies, 10 Elerium, 55 Upkeep, 5 Power</td></tr><tr><td bgcolor="#cccccc">175 Supplies, 10 Elerium, 55 Upkeep, 5 Power</td></tr><tr><td bgcolor="#999999">175 Supplies, 10 Elerium, 55 Upkeep, 5 Power</td></tr><tr><td bgcolor="#666666">250 Supplies, 20 Elerium, 55 Upkeep, 5 Power</td></tr></table>>];
+	"PsiChamber_SecondCell"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#D3F9C1"><tr><td><b>Second Cell</b></td></tr><tr><td bgcolor="#ffffff">225 Supplies, 15 Elerium, 50 Upkeep, 5 Power</td></tr><tr><td bgcolor="#cccccc">225 Supplies, 15 Elerium, 50 Upkeep, 5 Power</td></tr><tr><td bgcolor="#999999">225 Supplies, 15 Elerium, 50 Upkeep, 5 Power</td></tr><tr><td bgcolor="#666666">300 Supplies, 25 Elerium, 50 Upkeep, 5 Power</td></tr></table>>];
+	"ModularWeapons"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Modular Weapons</b></td></tr></table>>];
+	"GaussWeapons"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Gauss Weapons</b></td></tr></table>>];
+	"MagnetizedWeapons"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Magnetized Weapons</b></td></tr></table>>];
+	"PlasmaRifle"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Plasma Rifle</b></td></tr><tr><td bgcolor="#ffffff">10 Alien Alloy, 10 Elerium</td></tr><tr><td bgcolor="#cccccc">10 Alien Alloy, 10 Elerium</td></tr><tr><td bgcolor="#999999">10 Alien Alloy, 10 Elerium</td></tr><tr><td bgcolor="#666666">15 Alien Alloy, 15 Elerium</td></tr></table>>];
+	"HeavyPlasma"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Beam Cannon</b></td></tr><tr><td bgcolor="#ffffff">5 Alien Alloy, 5 Elerium</td></tr><tr><td bgcolor="#cccccc">5 Alien Alloy, 5 Elerium</td></tr><tr><td bgcolor="#999999">5 Alien Alloy, 5 Elerium</td></tr><tr><td bgcolor="#666666">10 Alien Alloy, 10 Elerium</td></tr></table>>];
+	"PlasmaSniper"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Plasma Lance</b></td></tr><tr><td bgcolor="#ffffff">5 Alien Alloy, 5 Elerium</td></tr><tr><td bgcolor="#cccccc">5 Alien Alloy, 5 Elerium</td></tr><tr><td bgcolor="#999999">5 Alien Alloy, 5 Elerium</td></tr><tr><td bgcolor="#666666">10 Alien Alloy, 10 Elerium</td></tr></table>>];
+	"AlloyCannon"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Storm Gun</b></td></tr><tr><td bgcolor="#ffffff">10 Alien Alloy</td></tr><tr><td bgcolor="#cccccc">10 Alien Alloy</td></tr><tr><td bgcolor="#999999">10 Alien Alloy</td></tr><tr><td bgcolor="#666666">20 Alien Alloy</td></tr></table>>];
+	"HybridMaterials"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Hybrid Materials</b></td></tr><tr><td bgcolor="#ffffff">2 ADVENT Trooper Corpse</td></tr><tr><td bgcolor="#cccccc">2 ADVENT Trooper Corpse</td></tr><tr><td bgcolor="#999999">2 ADVENT Trooper Corpse</td></tr><tr><td bgcolor="#666666">4 ADVENT Trooper Corpse</td></tr></table>>];
+	"PlatedArmor"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Plated Armor</b></td></tr><tr><td bgcolor="#ffffff">10 Alien Alloy</td></tr><tr><td bgcolor="#cccccc">10 Alien Alloy</td></tr><tr><td bgcolor="#999999">10 Alien Alloy</td></tr><tr><td bgcolor="#666666">15 Alien Alloy</td></tr></table>>];
+	"EXOSuit"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>E.X.O. Suit (r)</b></td></tr><tr><td bgcolor="#ffffff">2 ADVENT Trooper Corpse, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">2 ADVENT Trooper Corpse, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#999999">2 ADVENT Trooper Corpse, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#666666">4 ADVENT Trooper Corpse, 10 Alien Alloy, 10 Elerium, 1 Elerium Core</td></tr></table>>];
+	"SpiderSuit"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Spider Suit (r)</b></td></tr><tr><td bgcolor="#ffffff">2 ADVENT Stun Lancer Corpse, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">2 ADVENT Stun Lancer Corpse, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#999999">2 ADVENT Stun Lancer Corpse, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#666666">3 ADVENT Stun Lancer Corpse, 10 Alien Alloy, 10 Elerium, 1 Elerium Core</td></tr></table>>];
+	"WraithSuit"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Wraith Suit (r)</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies, 10 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">50 Supplies, 10 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#999999">50 Supplies, 10 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#666666">125 Supplies, 15 Alien Alloy, 15 Elerium, 1 Elerium Core</td></tr></table>>];
+	"WARSuit"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>W.A.R. Suit (r)</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies, 10 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">50 Supplies, 10 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#999999">50 Supplies, 10 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#666666">125 Supplies, 20 Alien Alloy, 10 Elerium, 1 Elerium Core</td></tr></table>>];
+	"PoweredArmor"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Powered Armor</b></td></tr><tr><td bgcolor="#ffffff">20 Alien Alloy, 5 Elerium</td></tr><tr><td bgcolor="#cccccc">20 Alien Alloy, 5 Elerium</td></tr><tr><td bgcolor="#999999">20 Alien Alloy, 5 Elerium</td></tr><tr><td bgcolor="#666666">30 Alien Alloy, 10 Elerium</td></tr></table>>];
+	"APRounds"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>A.P. Rounds</b></td></tr></table>>];
+	"TracerRounds"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Tracer Rounds</b></td></tr></table>>];
+	"IncendiaryRounds"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Dragon Rounds</b></td></tr></table>>];
+	"TalonRounds"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Talon Rounds</b></td></tr></table>>];
+	"VenomRounds"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Venom Rounds</b></td></tr></table>>];
+	"ShredderGun"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Shredder Gun</b></td></tr></table>>];
+	"Flamethrower"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Flamethrower</b></td></tr></table>>];
+	"FlamethrowerMk2"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Hellfire Projector</b></td></tr></table>>];
+	"BlasterLauncher"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Blaster Launcher</b></td></tr></table>>];
+	"PlasmaBlaster"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Plasma Blaster</b></td></tr></table>>];
+	"ShredstormCannon"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Shredstorm Cannon</b></td></tr></table>>];
+	"PlatedVest"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Plated Vest</b></td></tr></table>>];
+	"HazmatVest"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Hazmat Vest</b></td></tr></table>>];
+	"StasisVest"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Stasis Vest</b></td></tr></table>>];
+	"CombatStims"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Overdrive Serum</b></td></tr><tr><td bgcolor="#ffffff">1 Berserker Corpse, 35 Supplies</td></tr><tr><td bgcolor="#cccccc">1 Berserker Corpse, 35 Supplies</td></tr><tr><td bgcolor="#999999">1 Berserker Corpse, 35 Supplies</td></tr><tr><td bgcolor="#666666">2 Berserker Corpse, 60 Supplies</td></tr></table>>];
+	"MimicBeacon"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Mimic Beacon</b></td></tr><tr><td bgcolor="#ffffff">2 Faceless Corpse, 50 Supplies</td></tr><tr><td bgcolor="#cccccc">2 Faceless Corpse, 50 Supplies</td></tr><tr><td bgcolor="#999999">2 Faceless Corpse, 50 Supplies</td></tr><tr><td bgcolor="#666666">2 Faceless Corpse, 60 Supplies</td></tr></table>>];
+	"Hellweave"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Hellweave</b></td></tr><tr><td bgcolor="#ffffff">2 Chryssalid Corpse, 65 Supplies</td></tr><tr><td bgcolor="#cccccc">2 Chryssalid Corpse, 65 Supplies</td></tr><tr><td bgcolor="#999999">2 Chryssalid Corpse, 65 Supplies</td></tr><tr><td bgcolor="#666666">2 Chryssalid Corpse, 65 Supplies</td></tr></table>>];
+	"NanofiberVest"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Nanoscale Vest</b></td></tr><tr><td bgcolor="#ffffff">2 ADVENT Trooper Corpse, 30 Supplies</td></tr><tr><td bgcolor="#cccccc">2 ADVENT Trooper Corpse, 30 Supplies</td></tr><tr><td bgcolor="#999999">2 ADVENT Trooper Corpse, 30 Supplies</td></tr><tr><td bgcolor="#666666">3 ADVENT Trooper Corpse, 60 Supplies</td></tr></table>>];
+	"BattleScanner"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Battle Scanner</b></td></tr><tr><td bgcolor="#ffffff">30 Supplies</td></tr><tr><td bgcolor="#cccccc">30 Supplies</td></tr><tr><td bgcolor="#999999">30 Supplies</td></tr><tr><td bgcolor="#666666">50 Supplies</td></tr></table>>];
+	"AssaultRifle_MG_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Magnetic Rifles</b></td></tr><tr><td bgcolor="#ffffff">125 Supplies, 10 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#cccccc">125 Supplies, 10 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#999999">125 Supplies, 10 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#666666">200 Supplies, 30 Alien Alloy, 1 Engineers</td></tr></table>>];
+	"AssaultRifle_BM_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Plasma Rifles</b></td></tr><tr><td bgcolor="#ffffff">250 Supplies, 20 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#cccccc">250 Supplies, 20 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#999999">250 Supplies, 20 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#666666">500 Supplies, 50 Alien Alloy, 60 Elerium, 3 Engineers</td></tr></table>>];
+	"Shotgun_MG_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Shard Guns</b></td></tr><tr><td bgcolor="#ffffff">75 Supplies, 5 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#cccccc">75 Supplies, 5 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#999999">75 Supplies, 5 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#666666">75 Supplies, 15 Alien Alloy, 2 Engineers</td></tr></table>>];
+	"Shotgun_BM_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Storm Guns</b></td></tr><tr><td bgcolor="#ffffff">140 Supplies, 10 Alien Alloy, 10 Elerium, 4 Engineers</td></tr><tr><td bgcolor="#cccccc">140 Supplies, 10 Alien Alloy, 10 Elerium, 4 Engineers</td></tr><tr><td bgcolor="#999999">140 Supplies, 10 Alien Alloy, 10 Elerium, 4 Engineers</td></tr><tr><td bgcolor="#666666">200 Supplies, 40 Alien Alloy, 40 Elerium, 4 Engineers</td></tr></table>>];
+	"Cannon_MG_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Mag Cannon</b></td></tr><tr><td bgcolor="#ffffff">150 Supplies, 10 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#cccccc">150 Supplies, 10 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#999999">150 Supplies, 10 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#666666">150 Supplies, 25 Alien Alloy, 2 Engineers</td></tr></table>>];
+	"Cannon_BM_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Beam Cannon</b></td></tr><tr><td bgcolor="#ffffff">250 Supplies, 20 Alien Alloy, 10 Elerium, 4 Engineers</td></tr><tr><td bgcolor="#cccccc">250 Supplies, 20 Alien Alloy, 10 Elerium, 4 Engineers</td></tr><tr><td bgcolor="#999999">250 Supplies, 20 Alien Alloy, 10 Elerium, 4 Engineers</td></tr><tr><td bgcolor="#666666">400 Supplies, 60 Alien Alloy, 40 Elerium, 4 Engineers</td></tr></table>>];
+	"SniperRifle_MG_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Gauss Rifle</b></td></tr><tr><td bgcolor="#ffffff">150 Supplies, 10 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#cccccc">150 Supplies, 10 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#999999">150 Supplies, 10 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#666666">175 Supplies, 25 Alien Alloy, 2 Engineers</td></tr></table>>];
+	"SniperRifle_BM_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Plasma Lance</b></td></tr><tr><td bgcolor="#ffffff">300 Supplies, 20 Alien Alloy, 10 Elerium, 4 Engineers</td></tr><tr><td bgcolor="#cccccc">300 Supplies, 20 Alien Alloy, 10 Elerium, 4 Engineers</td></tr><tr><td bgcolor="#999999">300 Supplies, 20 Alien Alloy, 10 Elerium, 4 Engineers</td></tr><tr><td bgcolor="#666666">500 Supplies, 50 Alien Alloy, 60 Elerium, 4 Engineers</td></tr></table>>];
+	"Pistol_MG_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Mag Pistol</b></td></tr><tr><td bgcolor="#ffffff">60 Supplies, 5 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#cccccc">60 Supplies, 5 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#999999">60 Supplies, 5 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#666666">70 Supplies, 10 Alien Alloy, 1 Engineers</td></tr></table>>];
+	"Pistol_BM_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Beam Pistol</b></td></tr><tr><td bgcolor="#ffffff">125 Supplies, 10 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#cccccc">125 Supplies, 10 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#999999">125 Supplies, 10 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#666666">150 Supplies, 25 Alien Alloy, 25 Elerium, 3 Engineers</td></tr></table>>];
+	"Sword_MG_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Arc Blade</b></td></tr><tr><td bgcolor="#ffffff">90 Supplies, 10 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#cccccc">90 Supplies, 10 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#999999">90 Supplies, 10 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#666666">100 Supplies, 15 Alien Alloy, 1 Engineers</td></tr></table>>];
+	"Sword_BM_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Fusion Blade</b></td></tr><tr><td bgcolor="#ffffff">180 Supplies, 10 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#cccccc">180 Supplies, 10 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#999999">180 Supplies, 10 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#666666">200 Supplies, 25 Alien Alloy, 35 Elerium, 3 Engineers</td></tr></table>>];
+	"Gremlin_MG_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>GREMLIN Mark II</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies, 5 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#cccccc">50 Supplies, 5 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#999999">50 Supplies, 5 Alien Alloy, 2 Engineers</td></tr><tr><td bgcolor="#666666">60 Supplies, 15 Alien Alloy, 2 Engineers</td></tr></table>>];
+	"Gremlin_BM_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>GREMLIN Mark III</b></td></tr><tr><td bgcolor="#ffffff">75 Supplies, 10 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#cccccc">75 Supplies, 10 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#999999">75 Supplies, 10 Alien Alloy, 10 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#666666">100 Supplies, 15 Alien Alloy, 20 Elerium, 3 Engineers</td></tr></table>>];
+	"PsiAmp_MG_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Advanced Psi Amp</b></td></tr><tr><td bgcolor="#ffffff">70 Supplies, 10 Alien Alloy, 10 Elerium, 2 Sectoid Corpse, 2 Engineers</td></tr><tr><td bgcolor="#cccccc">70 Supplies, 10 Alien Alloy, 10 Elerium, 2 Sectoid Corpse, 2 Engineers</td></tr><tr><td bgcolor="#999999">70 Supplies, 10 Alien Alloy, 10 Elerium, 2 Sectoid Corpse, 2 Engineers</td></tr><tr><td bgcolor="#666666">80 Supplies, 10 Alien Alloy, 25 Elerium, 3 Sectoid Corpse, 2 Engineers</td></tr></table>>];
+	"PsiAmp_BM_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Alien Psi Amp</b></td></tr><tr><td bgcolor="#ffffff">200 Supplies, 10 Alien Alloy, 15 Elerium, 1 Gatekeeper Corpse, 3 Engineers</td></tr><tr><td bgcolor="#cccccc">200 Supplies, 10 Alien Alloy, 15 Elerium, 1 Gatekeeper Corpse, 3 Engineers</td></tr><tr><td bgcolor="#999999">200 Supplies, 10 Alien Alloy, 15 Elerium, 1 Gatekeeper Corpse, 3 Engineers</td></tr><tr><td bgcolor="#666666">120 Supplies, 45 Elerium, 2 Gatekeeper Corpse, 3 Engineers</td></tr></table>>];
+	"GrenadeLauncher_MG_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Advanced Grenade Launcher</b></td></tr><tr><td bgcolor="#ffffff">75 Supplies, 10 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#cccccc">75 Supplies, 10 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#999999">75 Supplies, 10 Alien Alloy, 1 Engineers</td></tr><tr><td bgcolor="#666666">80 Supplies, 20 Alien Alloy, 1 Engineers</td></tr></table>>];
+	"MediumPlatedArmor_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Predator Armor</b></td></tr><tr><td bgcolor="#ffffff">150 Supplies, 20 Alien Alloy, 6 ADVENT Trooper Corpse, 1 Engineers</td></tr><tr><td bgcolor="#cccccc">150 Supplies, 20 Alien Alloy, 6 ADVENT Trooper Corpse, 1 Engineers</td></tr><tr><td bgcolor="#999999">150 Supplies, 20 Alien Alloy, 6 ADVENT Trooper Corpse, 1 Engineers</td></tr><tr><td bgcolor="#666666">300 Supplies, 60 Alien Alloy, 12 ADVENT Trooper Corpse, 1 Engineers</td></tr></table>>];
+	"MediumPoweredArmor_Schematic"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Warden Armor</b></td></tr><tr><td bgcolor="#ffffff">300 Supplies, 40 Alien Alloy, 2 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#cccccc">300 Supplies, 40 Alien Alloy, 2 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#999999">300 Supplies, 40 Alien Alloy, 2 Elerium, 3 Engineers</td></tr><tr><td bgcolor="#666666">600 Supplies, 90 Alien Alloy, 75 Elerium, 3 Engineers</td></tr></table>>];
+	"MindShield"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Mindshield</b></td></tr><tr><td bgcolor="#ffffff">1 Sectoid Corpse, 45 Supplies</td></tr><tr><td bgcolor="#cccccc">1 Sectoid Corpse, 45 Supplies</td></tr><tr><td bgcolor="#999999">1 Sectoid Corpse, 45 Supplies</td></tr><tr><td bgcolor="#666666">2 Sectoid Corpse, 60 Supplies</td></tr></table>>];
+	"Skulljack"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Skulljack</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies</td></tr><tr><td bgcolor="#cccccc">50 Supplies</td></tr><tr><td bgcolor="#999999">50 Supplies</td></tr><tr><td bgcolor="#666666">75 Supplies</td></tr></table>>];
+	"BluescreenRounds"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Bluescreen Rounds</b></td></tr><tr><td bgcolor="#ffffff">75 Supplies</td></tr><tr><td bgcolor="#cccccc">75 Supplies</td></tr><tr><td bgcolor="#999999">75 Supplies</td></tr><tr><td bgcolor="#666666">125 Supplies</td></tr></table>>];
+	"EMPGrenade"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>EMP Grenade</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies</td></tr><tr><td bgcolor="#cccccc">50 Supplies</td></tr><tr><td bgcolor="#999999">50 Supplies</td></tr><tr><td bgcolor="#666666">60 Supplies</td></tr></table>>];
+	"EMPGrenadeMk2"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>EMP Bomb</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies</td></tr><tr><td bgcolor="#cccccc">50 Supplies</td></tr><tr><td bgcolor="#999999">50 Supplies</td></tr><tr><td bgcolor="#666666">60 Supplies</td></tr></table>>];
+	"SmokeGrenade"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Smoke Grenade</b></td></tr><tr><td bgcolor="#ffffff">25 Supplies</td></tr><tr><td bgcolor="#cccccc">25 Supplies</td></tr><tr><td bgcolor="#999999">25 Supplies</td></tr><tr><td bgcolor="#666666">40 Supplies</td></tr></table>>];
+	"SmokeGrenadeMk2"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Smoke Bomb</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies</td></tr><tr><td bgcolor="#cccccc">50 Supplies</td></tr><tr><td bgcolor="#999999">50 Supplies</td></tr><tr><td bgcolor="#666666">60 Supplies</td></tr></table>>];
+	"Medikit"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Medikit</b></td></tr><tr><td bgcolor="#ffffff">35 Supplies</td></tr><tr><td bgcolor="#cccccc">35 Supplies</td></tr><tr><td bgcolor="#999999">35 Supplies</td></tr><tr><td bgcolor="#666666">60 Supplies</td></tr></table>>];
+	"NanoMedikit"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Nanomedikit</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies, 1 Viper Corpse</td></tr><tr><td bgcolor="#cccccc">50 Supplies, 1 Viper Corpse</td></tr><tr><td bgcolor="#999999">50 Supplies, 1 Viper Corpse</td></tr><tr><td bgcolor="#666666">10 Supplies, 2 Viper Corpse</td></tr></table>>];
+	"FlashbangGrenade"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Flashbang Grenade</b></td></tr><tr><td bgcolor="#ffffff">35 Supplies</td></tr><tr><td bgcolor="#cccccc">35 Supplies</td></tr><tr><td bgcolor="#999999">35 Supplies</td></tr><tr><td bgcolor="#666666">50 Supplies</td></tr></table>>];
+	"Firebomb"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Incendiary Grenade</b></td></tr></table>>];
+	"FirebombMk2"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Incendiary Bomb</b></td></tr></table>>];
+	"AcidGrenade"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Acid Grenade</b></td></tr></table>>];
+	"AcidGrenadeMk2"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Acid Bomb</b></td></tr></table>>];
+	"GasGrenade"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Gas Grenade</b></td></tr></table>>];
+	"GasGrenadeMk2"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Gas Bomb</b></td></tr></table>>];
+	"ProximityMine"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#99D9EA"><tr><td><b>Proximity Mine</b></td></tr><tr><td bgcolor="#ffffff">100 Supplies</td></tr><tr><td bgcolor="#cccccc">100 Supplies</td></tr><tr><td bgcolor="#999999">100 Supplies</td></tr><tr><td bgcolor="#666666">125 Supplies</td></tr></table>>];
+	"ExperimentalGrenade"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Experimental Grenade (r)</b></td></tr><tr><td bgcolor="#ffffff">1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">1 Elerium Core</td></tr><tr><td bgcolor="#999999">1 Elerium Core</td></tr><tr><td bgcolor="#666666">1 Elerium Core</td></tr></table>>];
+	"ExperimentalAmmo"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Experimental Ammo (r)</b></td></tr><tr><td bgcolor="#ffffff">1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">1 Elerium Core</td></tr><tr><td bgcolor="#999999">1 Elerium Core</td></tr><tr><td bgcolor="#666666">1 Elerium Core</td></tr></table>>];
+	"ExperimentalArmor"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Experimental Armor (r)</b></td></tr><tr><td bgcolor="#ffffff">1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">1 Elerium Core</td></tr><tr><td bgcolor="#999999">1 Elerium Core</td></tr><tr><td bgcolor="#666666">1 Elerium Core</td></tr></table>>];
+	"HeavyWeapons"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Experimental Heavy Weapon (r)</b></td></tr><tr><td bgcolor="#ffffff">1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">1 Elerium Core</td></tr><tr><td bgcolor="#999999">1 Elerium Core</td></tr><tr><td bgcolor="#666666">1 Elerium Core</td></tr></table>>];
+	"AdvancedHeavyWeapons"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Experimental Powered Weapon (r)</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies, 1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">50 Supplies, 1 Elerium Core</td></tr><tr><td bgcolor="#999999">50 Supplies, 1 Elerium Core</td></tr><tr><td bgcolor="#666666">100 Supplies, 1 Elerium Core</td></tr></table>>];
+	"BattlefieldMedicine"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Battlefield Medicine</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies, 1 Elerium Core, 2 Viper Corpse</td></tr><tr><td bgcolor="#cccccc">50 Supplies, 1 Elerium Core, 2 Viper Corpse</td></tr><tr><td bgcolor="#999999">50 Supplies, 1 Elerium Core, 2 Viper Corpse</td></tr><tr><td bgcolor="#666666">75 Supplies, 1 Elerium Core, 3 Viper Corpse</td></tr></table>>];
+	"PlasmaGrenade"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Plasma Grenade</b></td></tr><tr><td bgcolor="#ffffff">75 Supplies, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">75 Supplies, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#999999">75 Supplies, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#666666">100 Supplies, 10 Alien Alloy, 10 Elerium, 1 Elerium Core</td></tr></table>>];
+	"AdvancedGrenades"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Advanced Explosives</b></td></tr><tr><td bgcolor="#ffffff">50 Supplies, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">50 Supplies, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#999999">50 Supplies, 5 Alien Alloy, 5 Elerium, 1 Elerium Core</td></tr><tr><td bgcolor="#666666">75 Supplies, 10 Alien Alloy, 10 Elerium, 1 Elerium Core</td></tr></table>>];
+	"Skullmining"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Skullmining</b></td></tr><tr><td bgcolor="#ffffff">75 Supplies, 1 Elerium Core</td></tr><tr><td bgcolor="#cccccc">75 Supplies, 1 Elerium Core</td></tr><tr><td bgcolor="#999999">75 Supplies, 1 Elerium Core</td></tr><tr><td bgcolor="#666666">125 Supplies, 1 Elerium Core</td></tr></table>>];
+	"Tech_Elerium"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Elerium</b></td></tr><tr><td bgcolor="#ffffff">20 Elerium</td></tr><tr><td bgcolor="#cccccc">20 Elerium</td></tr><tr><td bgcolor="#999999">20 Elerium</td></tr><tr><td bgcolor="#666666">40 Elerium</td></tr></table>>];
+	"Psionics"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Psionics</b></td></tr><tr><td bgcolor="#ffffff">5 Elerium</td></tr><tr><td bgcolor="#cccccc">5 Elerium</td></tr><tr><td bgcolor="#999999">5 Elerium</td></tr><tr><td bgcolor="#666666">10 Elerium</td></tr></table>>];
+	"AlienBiotech"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Alien Biotech</b></td></tr></table>>];
+	"Tech_AlienFacilityLead"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Facility Lead (r)</b></td></tr><tr><td bgcolor="#ffffff">50 Intel, 1 Facility Lead</td></tr><tr><td bgcolor="#cccccc">50 Intel, 1 Facility Lead</td></tr><tr><td bgcolor="#999999">50 Intel, 1 Facility Lead</td></tr><tr><td bgcolor="#666666">50 Intel, 1 Facility Lead</td></tr></table>>];
+	"Tech_AdventDatapad"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>ADVENT Datapad Decryption (r)</b></td></tr><tr><td bgcolor="#ffffff">1 ADVENT Datapad</td></tr><tr><td bgcolor="#cccccc">1 ADVENT Datapad</td></tr><tr><td bgcolor="#999999">1 ADVENT Datapad</td></tr><tr><td bgcolor="#666666">1 ADVENT Datapad</td></tr></table>>];
+	"Tech_AlienDatapad"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Alien Data Cache Decryption (r)</b></td></tr><tr><td bgcolor="#ffffff">1 Alien Data Cache</td></tr><tr><td bgcolor="#cccccc">1 Alien Data Cache</td></tr><tr><td bgcolor="#999999">1 Alien Data Cache</td></tr><tr><td bgcolor="#666666">1 Alien Data Cache</td></tr></table>>];
+	"AutopsySectoid"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Sectoid Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (6 for Instant) Corpse, 1 Scientist</td></tr><tr><td bgcolor="#cccccc">1 (6 for Instant) Corpse, 1 Scientist</td></tr><tr><td bgcolor="#999999">1 (6 for Instant) Corpse, 1 Scientist</td></tr><tr><td bgcolor="#666666">1 (10 for Instant) Corpse, 1 Scientist</td></tr></table>>];
+	"AutopsyViper"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Viper Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (5 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (5 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (5 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (8 for Instant) Corpse</td></tr></table>>];
+	"AutopsyMuton"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Muton Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (5 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (9 for Instant) Corpse</td></tr></table>>];
+	"AutopsyAdventOfficer"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>ADVENT Officer Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 Corpse</td></tr><tr><td bgcolor="#cccccc">1 Corpse</td></tr><tr><td bgcolor="#999999">1 Corpse</td></tr><tr><td bgcolor="#666666">1 Corpse</td></tr></table>>];
+	"AutopsyAdventTurret"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>ADVENT Turret Breakdown</b></td></tr><tr><td bgcolor="#ffffff">1 (3 for Instant) ADVENT Turret</td></tr><tr><td bgcolor="#cccccc">1 (3 for Instant) ADVENT Turret</td></tr><tr><td bgcolor="#999999">1 (3 for Instant) ADVENT Turret</td></tr><tr><td bgcolor="#666666">1 (6 for Instant) ADVENT Turret</td></tr></table>>];
+	"AutopsyBerserker"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Berserker Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (9 for Instant) Corpse</td></tr></table>>];
+	"AutopsyGatekeeper"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Gatekeeper Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (3 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (9 for Instant) Corpse</td></tr></table>>];
+	"AutopsyArchon"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Archon Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (5 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (5 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (5 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (8 for Instant) Corpse</td></tr></table>>];
+	"AutopsyFaceless"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Faceless Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (3 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (4 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (4 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (7 for Instant) Corpse</td></tr></table>>];
+	"AutopsyAndromedon"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Andromedon Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (5 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (5 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (5 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (8 for Instant) Corpse</td></tr></table>>];
+	"AutopsyChryssalid"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Chryssalid Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (15 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (15 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (15 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (20 for Instant) Corpse</td></tr></table>>];
+	"AutopsyAdventTrooper"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>ADVENT Trooper Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (10 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (15 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (15 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (25 for Instant) Corpse</td></tr></table>>];
+	"AutopsyAdventStunLancer"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>ADVENT Stun Lancer Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (4 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (9 for Instant) Corpse</td></tr></table>>];
+	"AutopsyAdventShieldbearer"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>ADVENT Shieldbearer Autopsy</b></td></tr><tr><td bgcolor="#ffffff">1 (4 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (4 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (4 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (7 for Instant) Corpse</td></tr></table>>];
+	"AutopsyAdventMEC"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>ADVENT MEC Breakdown</b></td></tr><tr><td bgcolor="#ffffff">1 (3 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (4 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (4 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (7 for Instant) Corpse</td></tr></table>>];
+	"AutopsySectopod"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Sectopod Breakdown</b></td></tr><tr><td bgcolor="#ffffff">1 (3 for Instant) Corpse</td></tr><tr><td bgcolor="#cccccc">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#999999">1 (6 for Instant) Corpse</td></tr><tr><td bgcolor="#666666">1 (9 for Instant) Corpse</td></tr></table>>];
+	"ResistanceCommunications"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Resistance Communications</b></td></tr></table>>];
+	"ResistanceRadio"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Resistance Radio</b></td></tr></table>>];
+	"AlienEncryption"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Alien Encryption</b></td></tr></table>>];
+	"BlacksiteData"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Blacksite Vial</b></td></tr></table>>];
+	"BlacksiteDataCube"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#A000A0"><tr><td><b>Blacksite Vial (item)</b></td></tr></table>>];
+	"AutopsyAdventPsiWitch"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Avatar Autopsy</b></td></tr></table>>];
+	"PsiGateArtifact"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#A000A0"><tr><td><b>Psionic Gate (Item)</b></td></tr></table>>];
+	"CorpseCyberus"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#A000A0"><tr><td><b>Codex Brain (Item)</b></td></tr></table>>];
+	"StasisSuitComponent"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#A000A0"><tr><td><b>ADVENT Stasis Suit (Item)</b></td></tr></table>>];
+	"ForgeStasisSuit"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Recovered ADVENT Stasis Suit</b></td></tr></table>>];
+	"PsiGate"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Psionic Gate</b></td></tr><tr><td bgcolor="#ffffff">65 Supplies, 10 Elerium</td></tr><tr><td bgcolor="#cccccc">65 Supplies, 10 Elerium</td></tr><tr><td bgcolor="#999999">65 Supplies, 10 Elerium</td></tr><tr><td bgcolor="#666666">65 Supplies, 10 Elerium</td></tr></table>>];
+	"CodexBrainPt1"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Codex Brain</b></td></tr><tr><td bgcolor="#ffffff">2 Scientist</td></tr><tr><td bgcolor="#cccccc">2 Scientist</td></tr><tr><td bgcolor="#999999">2 Scientist</td></tr><tr><td bgcolor="#666666">2 Scientist</td></tr></table>>];
+	"CodexBrainPt2"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#F8B6BC"><tr><td><b>Encrypted Codex Data</b></td></tr><tr><td bgcolor="#ffffff">4 Scientist</td></tr><tr><td bgcolor="#cccccc">4 Scientist</td></tr><tr><td bgcolor="#999999">4 Scientist</td></tr><tr><td bgcolor="#666666">4 Scientist</td></tr></table>>];
+	"Bluescreen"[fontcolor="#000000", color="#000000" label=<<table border="0" cellborder="1" bgcolor="#FFC90E"><tr><td><b>Bluescreen Protocol</b></td></tr></table>>];
 
- 	// Research Projects: red
- 	// Buildings: green
- 	// Proving Grounds: purple
- 	// Items: blue
- 	// Golden Path: orange
-
-splines=polyline;
-sep="+25,25";
-overlap=scalexy;
-nodesep=0.6;
-
-	node[shape=box];
-	rankdir="LR";
-
-	// Initial Stuff
-	Engineering[label="Engineering", color=green]
-	Laboratory[label="Laboratory\n(125 Supplies, 35 Upkeep, 3 Power)", color=green]
-	Workshop[label="Workshop\n(125 Supplies, 35 Upkeep, 1 Power)", color=green]
-	PowerRelay[label="Power Relay\n(80 Supplies, 10 Upkeep, +3 Power)", color=green]
-	OfficerTrainingSchool[label="Guerrilla Tactics School\n(85 Supplies, 25 Upkeep, 3 Power)", color=green]
-	Workshop_AdditionalWorkbench[label="Additional Workbench\n(100 Supplies, 40 Upkeep, 2 Power)", color=green]
-	Laboratory_AdditionalResearchStation[label="Additional Research Station\n(125 Supplies, 40 Upkeep, 3 Power)", color=green]
-	PowerRelay_PowerConduit[label="Power Conduit\n(80 Supplies, 10 Upkeep, +2 Power)", color=green]
-	DefenseFacility_QuadTurrets[label="Quad Turrets\n(75 Supplies, 10 Upkeep, 2 Power)", color=green]
-	PsiChamber_SecondCell[label="Second Cell\n(225 Supplies, 15 Elerium, 50 Upkeep, 5 Power)", color=green]
-
+	// Relations
+	T0_M1_WelcomeToLabs -> T2_M0_CompleteGuerillaOps;
+	AutopsyAdventPsiWitch -> T5_M2_BroadcastTheTruth;
+	T5_M2_BroadcastTheTruth -> T5_M3_FinalMission;
+	OfficerTrainingSchool -> EquipPCS;
+	ModularWeapons -> WeaponUpgrades;
+	ResistanceCommunications -> MakeContact;
+	ResistanceRadio -> RadioRelays;
+	T0_M1_WelcomeToLabs -> BlackMarket;
 	T0_M1_WelcomeToLabs -> Engineering;
-	T0_M1_WelcomeToLabs -> Laboratory -> Laboratory_AdditionalResearchStation;
-	T0_M1_WelcomeToLabs -> Workshop -> Workshop_AdditionalWorkbench;
+	T0_M1_WelcomeToLabs -> Workshop;
+	Workshop -> Workshop_AdditionalWorkbench;
+	T0_M1_WelcomeToLabs -> Laboratory;
+	Laboratory -> Laboratory_AdditionalResearchStation;
 	T0_M1_WelcomeToLabs -> PowerRelay;
-	PowerRelay -> PowerRelay_EleriumConduit;
 	PowerRelay -> PowerRelay_PowerConduit;
+	Tech_Elerium -> PowerRelay_EleriumConduit;
+	PowerRelay -> PowerRelay_EleriumConduit;
 	T0_M1_WelcomeToLabs -> OfficerTrainingSchool;
-
-
-	// Weapon Techs
- 	ModularWeapons[label="Modular Weapons", color=red];
-	GaussWeapons[label="Gauss Weapons", color=red];
-	MagnetizedWeapons[label="Magnetic Weapons", color=red];
-	PlasmaRifle[label="Plasma Rifle\n(10 Alloy, 10 Elerium)", color=red];
-	HeavyPlasma[label="Beam Cannon\n(5 Alloy, 5 Elerium)", color=red];
-	PlasmaSniper[label="Plasma Lance\n(5 Alloy, 5 Elerium)", color=red];
-	AlloyCannon[label="Storm Gun\n(10 Alloy)", color=red];
-
-	// Armor Techs
-	HybridMaterials[label="Hybrid Materials\n(2 ADVENT Trooper Corpse)", color=red];
-	PlatedArmor[label="Plated Armor\n(10 Alloy)", color=red];
-	EXOSuit[label="E.X.O. Suit (r)\n(5 Alloy, 2 ADVENT Trooper Corpse, 5 Elerium, 1 Elerium Core)", color=purple];
-	SpiderSuit[label="Spider Suit (r)\n(5 Alloy, 2 ADVENT Stun Lancer Corpse, 5 Elerium, 1 Elerium Core)", color=purple];
-	PoweredArmor[label="Powered Armor\n(20 Alloy, 5 Elerium)", color=red];
-	WraithSuit[label="Wraith Suit (r)\n(50 Supplies, 10 Alloy, 5 Elerium, 1 Elerium Core)", color=purple];
-	WARSuit[label="W.A.R. Suit (r)\n(50 Supplies, 10 Alloy, 5 Elerium, 1 Elerium Core)", color=purple];
-
-	// Elerium Tech
-	Tech_Elerium[label="Elerium\n(20 Elerium)", color=red];
-
-	// Psionics
-	Psionics[label="Psionics\n(5 Elerium)", color=red];
-
-	// Alien Facility Lead
-	Tech_AlienFacilityLead[label="Facility Lead (r)\n(50 Intel, 1 Facility Lead)" color=red];
-
-	// Intel Techs
-	Tech_AdventDatapad[label="ADVENT Datapad Decryption (r)\n(1 ADVENT Datapad)", color=red];
-	Tech_AlienDatapad[label="Alien Data Cache Decryption (r)\n(1 Alien Data Cache)", color=red];
-
-	// Autopsy Techs
-	AlienBiotech[label="Alien Biotech", color=red];
-	AutopsySectoid[label="Sectoid Autopsy\n(1 Corpse, 6 for instant)\nMin Science Score: 10", color=red];
-	AutopsyViper[label="Viper Autopsy\n(1 Corpse, 5 for instant)", color=red];
-	AutopsyMuton[label="Muton Autopsy\n(1 Corpse, 5 for instant)", color=red];
-	AutopsyBerserker[label="Berserker Autopsy\n(1 Corpse, 5 for instant)", color=red];
-	AutopsyArchon[label="Archon Autopsy\n(1 Corpse, 3 for instant)", color=red];
-	AutopsyGatekeeper[label="Gatekeeper Autopsy\n(1 Corpse, 3 for instant)", color=red];
-	AutopsyAndromedon[label="Andromedon Autopsy\n(1 Corpse, 4 for instant)", color=red];
-	AutopsyFaceless[label="Faceless Autopsy\n(1 Corpse, 3 for instant)", color=red];
-	AutopsyChryssalid[label="Chryssalid Autopsy\n(1 Corpse, 15 for instant)", color=red];
-	AutopsyAdventTrooper[label="ADVENT Trooper Autopsy\n(1 Corpse, 10 for instant)", color=red];
-	AutopsyAdventStunLancer[label="ADVENT Stun Lancer Autopsy\n(1 Corpse, 4 for instant)", color=red];
-	AutopsyAdventShieldbearer[label="ADVENT Shieldbearer Autopsy\n(1 Corpse, 4 for instant)", color=red];
-	AutopsyAdventMEC[label="ADVENT MEC Breakdown\n(1 Corpse, 3 for instant)", color=red];
-	AutopsyAdventTurret[label="ADVENT Turret Breakdown\n(1 Corpse, 3 for instant)", color=red];
-	AutopsySectopod[label="Sectopod Breakdown\n(1 Corpse, 3 for instant)", color=red];
-
-	// Golden Path Techs & Shadow Chamber Projects
-	ResistanceCommunications[label="Resistance Communications", color=orange];
-	ResistanceRadio[label="Resistance Radio", color=orange];
-	AutopsyAdventOfficer[label="ADVENT Officer Autopsy", color=orange];
-	AlienEncryption[label="Alien Encryption", color=orange];
-	CodexBrainPt1[label="Codex Brain\nMin Science Score: 15", color=orange];
-	CodexBrainPt2[label="Encrypted Codex Data\nMin Science Score: 25", color=orange];
-	BlacksiteData[label="Blacksite Vial", color=orange];
-	ForgeStasisSuit[label="Recovered ADVENT Stasis Suit", color=orange];
-	PsiGate[label="Psionic Gate\n(65 Supplies, 10 Elerium)", color=orange];
-	AutopsyAdventPsiWitch[label="Avatar Autopsy", color=orange];
-
-	// Proving Grounds Projects
-	Skulljack[label="Skulljack (r)\n(50 Supplies)", color=orange]
-	ExperimentalAmmo[label="Experimental Ammo (r)\n(1 Elerium Core)", color=purple];
-	ExperimentalGrenade[label="Experimental Grenade (r)\n(1 Elerium Core)", color=purple];
-	ExperimentalArmor[label="Experimental Armor (r)\n(1 Elerium Core)", color=purple];
-	Bluescreen[label="Bluescreen Protocol", color=purple];
-	BattlefieldMedicine[label="Battlefield Medicine\n(50 Supplies, 1 Elerium Core, 2 Viper Corpses)", color=purple];
-	PlasmaGrenade[label="Plasma Grenade\n(75 Supplies, 1 Elerium Core, 5 Alloy, 5 Elerium)", color=purple];
-	AdvancedGrenades[label="Advanced Explosives\n(50 Supplies, 1 Elerium Core, 5 Alloy, 5 Elerium)", color=purple];
-	Skullmining[label="Skullmining\n(75 Supplies, 1 Elerium Core)", color=purple];
-	HeavyWeapons[label="Experimental Heavy Weapon (r)\n(1 Elerium Core)", color=purple];
-	AdvancedHeavyWeapons[label="Experimental Powered Weapon (r)\n(50 Supplies, 1 Elerium Core)", color=purple];
-
-	// Ammo
-	APRounds[label="A.P. Rounds", color=blue];
-	TracerRounds[label="Tracer Rounds", color=blue];
-	IncendiaryRounds[label="Dragon Rounds", color=blue];
-	TalonRounds[label="Talon Rounds", color=blue];
-	VenomRounds[label="Venom Roundss", color=blue];
-	BluescreenRounds[label="Bluescreen Rounds\n(75 Supplies)", color=blue];
-
+	UFODefense -> DefenseFacility_QuadTurrets;
+	AlienEncryption -> ShadowChamber;
+	ShadowChamber -> ShadowChamber_CelestialGate;
+	PsiGateArtifact -> ShadowChamber_CelestialGate;
+	AutopsyAdventOfficer -> ProvingGrounds;
+	AlienBiotech -> AdvancedWarfareCenter;
+	AutopsyAdventTurret -> UFODefense;
+	ResistanceCommunications -> ResistanceComms;
+	ResistanceRadio -> ResistanceComms_AdditionalCommStation;
+	ResistanceComms -> ResistanceComms_AdditionalCommStation;
+	Psionics -> PsiChamber;
+	PsiChamber -> PsiChamber_SecondCell;
+	T0_M1_WelcomeToLabs -> ModularWeapons;
+	MagnetizedWeapons -> GaussWeapons;
+	ModularWeapons -> MagnetizedWeapons;
+	Tech_Elerium -> PlasmaRifle;
+	PlasmaRifle -> HeavyPlasma;
+	PlasmaRifle -> PlasmaSniper;
+	PlasmaRifle -> AlloyCannon;
+	T0_M1_WelcomeToLabs -> HybridMaterials;
+	HybridMaterials -> PlatedArmor;
+	PlatedArmor -> EXOSuit;
+	PlatedArmor -> SpiderSuit;
+	PoweredArmor -> WraithSuit;
+	PoweredArmor -> WARSuit;
+	Tech_Elerium -> PoweredArmor;
 	ExperimentalAmmo -> APRounds;
 	ExperimentalAmmo -> TracerRounds;
 	ExperimentalAmmo -> IncendiaryRounds;
 	ExperimentalAmmo -> TalonRounds;
 	ExperimentalAmmo -> VenomRounds;
-	Bluescreen -> BluescreenRounds;
-
-	// Grenades
-	Firebomb[label="Incendiary Grenade", color=blue];
-	FirebombMK2[label="Incendiary Bomb", color=blue];
-	//AlienGrenade[label="Plasma Grenade", color=blue];
-	FlashbangGrenade[label="Flashbang Grenade\n(35 Supplies)", color=blue];
-	SmokeGrenade[label="Smoke Grenade\n(25 Supplies)", color=blue];
-	SmokeGrenadeMk2[label="Smoke Bomb\n(50 Supplies)", color=blue];
-	GasGrenade[label="Gas Grenade", color=blue];
-	GasGrenadeMk2[label="Gas Bomb", color=blue];
-	AcidGrenade[label="Acid Grenade", color=blue];
-	AcidGrenadeMk2[label="Acid Bomb", color=blue];
-	EMPGrenade[label="EMP Grenade\n(50 Supplies)", color=blue];
-	EMPGrenadeMk2[label="EMP Bomb\n(50 Supplies)", color=blue];
-	ProximityMine[label="Proximity Mine", color=blue];
-
-	ExperimentalGrenade -> Firebomb -> FirebombMK2;
-	ExperimentalGrenade -> AcidGrenade -> AcidGrenadeMk2;
-	ExperimentalGrenade -> GasGrenade -> GasGrenadeMk2;
-	Bluescreen -> EMPGrenade  -> EMPGrenadeMk2;
-	AdvancedGrenades -> SmokeGrenadeMk2;
-	AdvancedGrenades -> FirebombMK2;
-	AdvancedGrenades -> GasGrenadeMk2;
-	AdvancedGrenades -> AcidGrenadeMk2;
-	AdvancedGrenades -> EMPGrenadeMk2;
-	
-	//Bluescreen -> EMPGrenadeMk2;
-	Engineering -> FlashbangGrenade;
-	Engineering -> Medikit;
-	Engineering -> SmokeGrenade;
-	AutopsyAndromedon -> ProximityMine;
-	SmokeGrenade -> SmokeGrenadeMk2;
-	Medikit -> NanoMedikit;
-	
-
-	// Engineering Items
-	CombatStims[label="Overdrive Serum\n(1 Berserker Corpse, 35 Supplies)", color=blue]
-	NanoMedikit[label="Nanomedikit\n(1 Viper Corpse, 50 Supplies)", color=blue];
-	ProximityMine[label="Proximity Mine\n(100 Supplies)", color=blue];
-	BattleScanner[label="Battle Scanner\n(30 Supplies)", color=blue];
-	MimicBeacon[label="Mimic Beacon\n(2 Faceless Corpses, 50 Supplies)", color=blue];
-	NanofiberVest[label="Nanoscale Vest\n(2 ADVENT Trooper Corpses, 30 Supplies)", color=blue];
-	Hellweave[label="Hellweave\n(2 Chryssalid Corpses, 65 Supplies)", color=blue];
-	PlatedVest[label="Plated Vest", color=blue];
-	HazmatVest[label="Hazmat Vest", color=blue];
-	StasisVest[label="Stasis Vest", color=blue];
-	Medikit[label="Medikit\n(35 Supplies)", color=blue];
-	MindShield[label="Mindshield\n(1 Sectoid Corpse, 45 Supplies)", color=blue];
-
-	AutopsyBerserker -> CombatStims;
-	AutopsyChryssalid -> Hellweave;
-	Tech_Elerium -> PowerRelay_EleriumConduit;
-	AutopsyFaceless -> MimicBeacon;
-	HybridMaterials -> NanofiberVest;
-	AutopsySectoid -> MindShield;
-	AutopsyAdventTrooper -> BattleScanner;
-
-	ExperimentalArmor -> PlatedVest;
-	ExperimentalArmor -> HazmatVest;
-	ExperimentalArmor -> StasisVest;
-
-	// Experimental Weapons
-	ShredderGun[label="Shredder Gun", color=blue];
-	Flamethrower[label="Flamethrower", color=blue];
-	FlamethrowerMk2[label="Hellfire Projector", color=blue];
-	BlasterLauncher[label="Blaster Launcher", color=blue];
-	PlasmaBlaster[label="Plasma Blaster", color=blue];
-	ShredstormCannon[label="Shredstorm Cannon", color=blue];
-
 	HeavyWeapons -> ShredderGun;
 	HeavyWeapons -> Flamethrower;
 	AdvancedHeavyWeapons -> FlamethrowerMk2;
 	AdvancedHeavyWeapons -> BlasterLauncher;
 	AdvancedHeavyWeapons -> PlasmaBlaster;
 	AdvancedHeavyWeapons -> ShredstormCannon;
-
-	// Quests
-	T0_M1_WelcomeToLabs[label="Game Start", color=black];
-	T2_M0_CompleteGuerillaOps[color=black];
-	ItemDrop[label="Item Drop", color=black];
-	PsiGateArtifact[label="Psionic Gate (Item)", color=black];
-	CorpseCyberus[label="Codex Brain (Item)", color=black];
-	BlacksiteDataCube[label="Blacksite Vial (Item)", color=black]
-	StasisSuitComponent[label="ADVENT Stasis Suit (Item)", color=black]
-	T5_M2_BroadcastTheTruth[color=black];
-	T5_M3_FinalMission[color=black];
-
-	// Quest Items/Buildings
-	ShadowChamber[label="Shadow Chamber (building)\n(125 Supplies, 30 Upkeep, 5 Power)", color=green]
-	ShadowChamber_CelestialGate[label="Psionic Gate\n(200 Supplies, 50 Upkeep, 4 Power)", color=green]
-	ProvingGrounds[label="Proving Grounds\n(100 Supplies, 25 Upkeep, 3 Power)", color=green]
-	AdvancedWarfareCenter[label="Advanced Warfare Center\n(115 Supplies, 35 Upkeep, 3 Power)", color=green]
-	UFODefense[label="Defense Matrix (building)\n(75 Supplies, 10 Upkeep, 2 Power)", color=green]
-	ResistanceComms[label="Resistance Comms\n(110 Supplies, 25 Upkeep, 3 Power)", color=green]
-	PsiChamber[label="Psi Lab (building)\n(175 Supplies, 10 Elerium, 55 Upkeep, 5 Power)", color=green]
-	PowerRelay_EleriumConduit[label="Elerium Conduit\n(150 Supplies, 20 Elerium, 20 Upkeep, +6 Power)", color=green]
-	ResistanceComms_AdditionalCommStation[label="Additional Comm Station\n(125 Supplies, 35 Upkeep, 4 Power)", color=green]
-
-	// Upgrades
-	AssaultRifle_MG_Schematic[label="Magnetic Rifles\n(125 Supplies, 10 Alloys)\nMin. Engineering Score: 10", color=blue]
-	AssaultRifle_BM_Schematic[label="Plasma Rifles\n(250 Supplies, 20 Alloys, 10 Elerium)\nMin. Engineering Score: 20", color=blue]
-	Shotgun_MG_Schematic[label="Shard Guns\n(75 Supplies, 5 Alloys)\nMin. Engineering Score: 15", color=blue]
-	Shotgun_BM_Schematic[label="Storm Guns\n(140 Supplies, 10 Alloys, 10 Elerium)\nMin. Engineering Score: 25", color=blue]
-	Cannon_MG_Schematic[label="Mag Cannon\n(150 Supplies, 10 Alloys)\nMin. Engineering Score: 15", color=blue]
-	Cannon_BM_Schematic[label="Beam Cannon\n(250 Supplies, 20 Alloys, 10 Elerium)\nMin. Engineering Score: 25", color=blue]
-	SniperRifle_MG_Schematic[label="Gauss Rifle\n(150 Supplies, 10 Alloys)\nMin. Engineering Score: 15", color=blue]
-	SniperRifle_BM_Schematic[label="Plasma Lance\n(300 Supplies, 20 Alloys, 10 Elerium)\nMin. Engineering Score: 25", color=blue]
-	Pistol_MG_Schematic[label="Mag Pistol\n(60 Supplies, 5 Alloys)\nMin. Engineering Score: 10", color=blue]
-	Pistol_BM_Schematic[label="Beam Pistol\n(125 Supplies, 10 Alloys, 10 Elerium)\nMin. Engineering Score: 20", color=blue]
-	Sword_MG_Schematic[label="Arc Blade\n(90 Supplies, 10 Alloys)\nMin. Engineering Score: 10", color=blue]
-	Sword_BM_Schematic[label="Fusion Blade\n(180 Supplies, 10 Alloys, 10 Elerium)\nMin. Engineering Score: 20", color=blue]
-	Gremlin_MG_Schematic[label="GREMLIN Mark II\n(50 Supplies, 5 Alloys)\nMin. Engineering Score: 15", color=blue]
-	Gremlin_BM_Schematic[label="GREMLIN Mark III\n(75 Supplies, 10 Alloys, 10 Elerium)\nMin. Engineering Score: 20", color=blue]
-	PsiAmp_MG_Schematic[label="Advanced Psi Amp\n(70 Supplies, 10 Alloys, 10 Elerium, 2 Sectoid Corpse)\nMin. Engineering Score: 15", color=blue]
-	PsiAmp_BM_Schematic[label="Alien Psi Amp\n(200 Supplies, 10 Alloys, 15 Elerium, 1 Gatekeeper Corpse)\nMin. Engineering Score: 20", color=blue]
-	GrenadeLauncher_MG_Schematic[label="Advanced Grenade Launcher\n(75 Supplies, 10 Alloys)\nMin. Engineering Score: 10", color=blue]
-	MediumPlatedArmor_Schematic[label="Predator Armor\n(150 Supplies, 20 Alloys, 6 ADVENT Trooper Corpses)\nMin. Engineering Score: 10", color=blue]
-	MediumPoweredArmor_Schematic[label="Warden Armor\n(300 Supplies, 40 Alloys, 20 Elerium)\nMin. Engineering Score: 20", color=blue]
-
-	AutopsyAdventPsiWitch -> T5_M2_BroadcastTheTruth -> T5_M3_FinalMission;
-	
-	// Stuff
-	MakeContact[label="Make Contact", color=black]
-	RadioRelays[label="Radio Relays", color=black]
-	BlackMarket[label="Black Market\n(Appears between 25\nand 35 days into the game.\nSeems dependent on some\nmission though)", color=black]
-
-	// Relationships/Tree
-	
-
+	ExperimentalArmor -> PlatedVest;
+	ExperimentalArmor -> HazmatVest;
+	ExperimentalArmor -> StasisVest;
+	AutopsyBerserker -> CombatStims;
+	AutopsyFaceless -> MimicBeacon;
+	AutopsyChryssalid -> Hellweave;
+	HybridMaterials -> NanofiberVest;
+	AutopsyAdventTrooper -> BattleScanner;
+	MagnetizedWeapons -> AssaultRifle_MG_Schematic;
+	PlasmaRifle -> AssaultRifle_BM_Schematic;
+	MagnetizedWeapons -> Shotgun_MG_Schematic;
+	AlloyCannon -> Shotgun_BM_Schematic;
+	GaussWeapons -> Cannon_MG_Schematic;
+	HeavyPlasma -> Cannon_BM_Schematic;
+	GaussWeapons -> SniperRifle_MG_Schematic;
+	PlasmaSniper -> SniperRifle_BM_Schematic;
 	MagnetizedWeapons -> Pistol_MG_Schematic;
 	PlasmaRifle -> Pistol_BM_Schematic;
 	AutopsyAdventStunLancer -> Sword_MG_Schematic;
@@ -265,121 +230,76 @@ nodesep=0.6;
 	AutopsyMuton -> GrenadeLauncher_MG_Schematic;
 	PlatedArmor -> MediumPlatedArmor_Schematic;
 	PoweredArmor -> MediumPoweredArmor_Schematic;
-
-
-
-	T0_M1_WelcomeToLabs -> ModularWeapons;
-	ModularWeapons -> MagnetizedWeapons -> GaussWeapons;
-
- 	Tech_Elerium -> PlasmaRifle;
- 	PlasmaRifle -> HeavyPlasma;
- 	PlasmaRifle -> PlasmaSniper;
- 	PlasmaRifle -> AlloyCannon;
- 	AutopsySectoid -> Psionics;
-
-
- 	T0_M1_WelcomeToLabs -> HybridMaterials -> PlatedArmor -> EXOSuit;
- 	PlatedArmor -> SpiderSuit;
- 	Tech_Elerium -> PoweredArmor;
- 	PoweredArmor -> WraithSuit;
- 	PoweredArmor -> WARSuit;
-
- 	GaussWeapons -> Tech_Elerium;
- 	PlatedArmor -> Tech_Elerium;
-
- 	T0_M1_WelcomeToLabs -> AlienBiotech; // Technically not the case, but makes the graph look prettier
-	T0_M1_WelcomeToLabs -> ItemDrop -> Tech_AlienFacilityLead;
-	ItemDrop -> Tech_AdventDatapad;
-	ItemDrop -> Tech_AlienDatapad;
-
-	AlienBiotech -> AutopsySectoid;
-	AlienBiotech -> AutopsyViper -> BattlefieldMedicine -> NanoMedikit;
-	AlienBiotech -> AutopsyMuton;
-	AlienBiotech -> AutopsyBerserker;
-	AlienBiotech -> AutopsyArchon;
-	AlienBiotech -> AutopsyGatekeeper;
-	AlienBiotech -> AutopsyAndromedon;
-	AlienBiotech -> AutopsyFaceless;
-	AlienBiotech -> AutopsyChryssalid;
-
-	AlienBiotech -> AutopsyAdventOfficer;
-	//AlienBiotech -> AutopsyAdventTrooper;
-	AutopsyAdventOfficer -> AutopsyAdventTrooper;
-	//AlienBiotech -> AutopsyAdventStunLancer;
-	AutopsyAdventOfficer -> AutopsyAdventStunLancer;
-	//AlienBiotech -> AutopsyAdventShieldbearer;
-	AutopsyAdventOfficer -> AutopsyAdventShieldbearer;
-	//AlienBiotech -> AutopsyAdventMEC;
-	AutopsyAdventOfficer -> AutopsyAdventMEC;
-	//AlienBiotech -> AutopsyAdventTurret;
-	AutopsyAdventOfficer -> AutopsyAdventTurret;
-	//AlienBiotech -> AutopsySectopod;
-	AutopsyAdventOfficer -> AutopsySectopod;
-
-	T0_M1_WelcomeToLabs -> T2_M0_CompleteGuerillaOps;
-	T2_M0_CompleteGuerillaOps -> ResistanceCommunications -> ResistanceRadio;
-	ResistanceRadio -> RadioRelays;
-	ResistanceRadio -> ResistanceComms_AdditionalCommStation;
-
-	ResistanceComms -> ResistanceComms_AdditionalCommStation;
-	ResistanceCommunications -> MakeContact;
-
-
-	BlacksiteDataCube -> BlacksiteData;// -> AlienEncryption;
-	CorpseCyberus -> AlienEncryption;
-
-	ShadowChamber -> CodexBrainPt1;
-	//CorpseCyberus -> CodexBrainPt1;
-	AlienBiotech -> CodexBrainPt1;
-
-	CodexBrainPt1 -> CodexBrainPt2;
-
-	ShadowChamber -> BlacksiteData;
-	StasisSuitComponent -> ForgeStasisSuit;
-	ShadowChamber -> ForgeStasisSuit;
-
-	ShadowChamber -> ShadowChamber_CelestialGate;
-	ShadowChamber_CelestialGate -> PsiGate;
-
-	BlacksiteData -> AutopsyAdventPsiWitch;
-	//AlienBiotech -> AutopsyAdventPsiWitch;
-	PsiGate -> AutopsyAdventPsiWitch;
-	ForgeStasisSuit -> AutopsyAdventPsiWitch;
-
-	ProvingGrounds -> ExperimentalAmmo;
+	AutopsySectoid -> MindShield;
 	ProvingGrounds -> Skulljack;
+	Bluescreen -> BluescreenRounds;
+	Bluescreen -> EMPGrenade;
+	EMPGrenade -> EMPGrenadeMk2;
+	AdvancedGrenades -> EMPGrenadeMk2;
+	Engineering -> SmokeGrenade;
+	SmokeGrenade -> SmokeGrenadeMk2;
+	AdvancedGrenades -> SmokeGrenadeMk2;
+	Engineering -> Medikit;
+	Medikit -> NanoMedikit;
+	BattlefieldMedicine -> NanoMedikit;
+	Engineering -> FlashbangGrenade;
+	ExperimentalGrenade -> Firebomb;
+	Firebomb -> FirebombMk2;
+	AdvancedGrenades -> FirebombMk2;
+	ExperimentalGrenade -> AcidGrenade;
+	AcidGrenade -> AcidGrenadeMk2;
+	AdvancedGrenades -> AcidGrenadeMk2;
+	ExperimentalGrenade -> GasGrenade;
+	GasGrenade -> GasGrenadeMk2;
+	AdvancedGrenades -> GasGrenadeMk2;
+	AutopsyAndromedon -> ProximityMine;
 	ProvingGrounds -> ExperimentalGrenade;
-	//ProvingGrounds -> ExperimentalArmor;
+	ProvingGrounds -> ExperimentalAmmo;
 	AutopsyAdventShieldbearer -> ExperimentalArmor;
-
-	//ProvingGrounds -> Bluescreen;
-	AutopsyAdventMEC -> Bluescreen;
-
-	AutopsyMuton -> PlasmaGrenade;
-	PlasmaGrenade -> AdvancedGrenades;
-
-	Skulljack -> Skullmining;
 	EXOSuit -> HeavyWeapons;
 	WARSuit -> AdvancedHeavyWeapons;
-
-	// Buildings
-	AutopsyAdventOfficer -> ProvingGrounds;
-	AlienEncryption -> ShadowChamber;
-	AlienBiotech -> AdvancedWarfareCenter;
-	AutopsyAdventTurret -> UFODefense -> DefenseFacility_QuadTurrets;
-	ResistanceCommunications -> ResistanceComms;
-	Psionics -> PsiChamber -> PsiChamber_SecondCell;
-	PsiGateArtifact -> ShadowChamber_CelestialGate;
-
-	// Schematics
-	MagnetizedWeapons -> AssaultRifle_MG_Schematic;
-	PlasmaRifle -> AssaultRifle_BM_Schematic;
-	MagnetizedWeapons -> Shotgun_MG_Schematic;
-	AlloyCannon -> Shotgun_BM_Schematic;
-	GaussWeapons -> Cannon_MG_Schematic;
-	HeavyPlasma -> Cannon_BM_Schematic;
-	GaussWeapons -> SniperRifle_MG_Schematic;
-	PlasmaSniper -> SniperRifle_BM_Schematic;
-
-
- }
+	AutopsyViper -> BattlefieldMedicine;
+	AutopsyMuton -> PlasmaGrenade;
+	PlasmaGrenade -> AdvancedGrenades;
+	Skulljack -> Skullmining;
+	GaussWeapons -> Tech_Elerium;
+	PlatedArmor -> Tech_Elerium;
+	AutopsySectoid -> Psionics;
+	T0_M1_WelcomeToLabs -> AlienBiotech;
+	FacilityLeadDrop -> Tech_AlienFacilityLead;
+	AdventDatapadDrop -> Tech_AdventDatapad;
+	AlienDatapadDrop -> Tech_AlienDatapad;
+	AlienBiotech -> AutopsySectoid;
+	AlienBiotech -> AutopsyViper;
+	AlienBiotech -> AutopsyMuton;
+	AlienBiotech -> AutopsyAdventOfficer;
+	AutopsyAdventOfficer -> AutopsyAdventTurret;
+	AlienBiotech -> AutopsyBerserker;
+	AlienBiotech -> AutopsyGatekeeper;
+	AlienBiotech -> AutopsyArchon;
+	AlienBiotech -> AutopsyFaceless;
+	AlienBiotech -> AutopsyAndromedon;
+	AlienBiotech -> AutopsyChryssalid;
+	AutopsyAdventOfficer -> AutopsyAdventTrooper;
+	AutopsyAdventOfficer -> AutopsyAdventStunLancer;
+	AutopsyAdventOfficer -> AutopsyAdventShieldbearer;
+	AutopsyAdventOfficer -> AutopsyAdventMEC;
+	AutopsyAdventOfficer -> AutopsySectopod;
+	T2_M0_CompleteGuerillaOps -> ResistanceCommunications;
+	ResistanceCommunications -> ResistanceRadio;
+	CorpseCyberus -> AlienEncryption;
+	BlacksiteDataCube -> AlienEncryption;
+	BlacksiteDataCube -> BlacksiteData;
+	ShadowChamber -> BlacksiteData;
+	BlacksiteData -> AutopsyAdventPsiWitch;
+	PsiGate -> AutopsyAdventPsiWitch;
+	ForgeStasisSuit -> AutopsyAdventPsiWitch;
+	StasisSuitComponent -> ForgeStasisSuit;
+	ShadowChamber -> ForgeStasisSuit;
+	ShadowChamber_CelestialGate -> PsiGate;
+	AlienBiotech -> CodexBrainPt1;
+	ShadowChamber -> CodexBrainPt1;
+	CorpseCyberus -> CodexBrainPt1;
+	CodexBrainPt1 -> CodexBrainPt2;
+	AutopsyAdventMEC -> Bluescreen;
+}
