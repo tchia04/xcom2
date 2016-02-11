@@ -1,0 +1,50 @@
+Shadow Chamber => Show how many enemies are on the mission
+Black Market => Random Rumor from Resistance
+
+* Alien Biopsy
+* Advent Officer Corpse Autopsy
+
+Access the Alien Network				Separate Track
+* Proving Ground					* Guerilla Ops (Protect the Device?)
+* Skulljack						Contact the Resistance in the Blacksite Region
+* Use Skulljack on Advent Officer			* Research Resistance Communications
+=> Makes Codex appear					* Fly to the Blacksite Region
+* Kill a Codex						* Make Contact
+=> Codex Brain (Item)
+
+Alien Encryption					Investigate the ADVENT Blacksite
+Examine the Codex Brain					* Complete the ADVENT Blacksite Mission
+							=> Blacksite Vial (Item)
+Investigate Codex Brain Coordinates 
+Psi Gate (Item)
+=> upgrade shadow chamber/celestial gate
+=> Research Gate
+							Research Alien Encryption
+							Build the Shadow Chamber
+Parallel: Encrypted Codex Data				Examine the recovered Blacksite Vial
+Breach the Alien Network				Investigate the Blacksite Vial Coordinates
+Use the Skulljack on a Codex				=> Forge Statis Suit (Item)
+nEUTRALIZE aVATAR
+=> Avatar Corpse (Item)					Examine the ADVENT Status Suit
+							Research Stasis Suit (Shadow Labs)
+
+							Needs Skulljack
+
+
+Avatar Autopsy
+Tower
+Final Mission
+
+GTS
+Vulture (75 Supplies)
+Squad Size I (50 Supplies, Sergeant)
+Lightning Strike (100 Supplies, Sargean)
+Wet Work (125 Supplies, Sargent)
+Vengeance (100 Supplies, Lieutenant)
+Integrated Warfare (150 Supplies, Lieutenant)
+Squad Size II (75 Supplies, Captain)
+Stay With Me (150 Supplies, Major)
+Grenadier: Biggest Booms (75 Supplies, Grenadier Captain)
+Ranger: Hunter's Instinct (75 Supplies, Ranger Captain)
+Sharpshooter: Deadshot (75 Supplies, Sharpshooter Captain)
+Specialist: Cool under Pressure (75 Supplies, Specialist Captain)

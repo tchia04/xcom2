@@ -1,0 +1,21 @@
+digraph graphname {
+	splines=polyline;sep="+25,25";overlap=scalexy;nodesep=0.6;node[shape=none];rankdir="LR";
+
+	OperationGatecrasher -> GuerillaOps -> ResistanceComuncations -> ContactBlacksiteRegion -> BlacksiteMission -> BlacksiteVialItem -> AlienEncryption;
+
+
+	OperationGatecrasher -> AlienBiotech -> AutopsyAdventOfficer -> ProvingGrounds -> Skulljack -> UseSkulljackOnAdventOfficer -> KillCodex -> CodexBrainItem;
+
+	CodexBrainItem -> AlienEncryption -> ShadowChamber;
+
+	ShadowChamber -> ResearchBlacksiteVial -> ContactBlacksiteVialCoordinates -> ForgeStatisSuitItem -> ResearchStasisSuit;
+
+	ShadowChamber -> CodexBrainPt1 -> CodexBrainPt2 -> UseSkulljackOnCodex -> NeutralizeAvatar -> AvatarCorpseItem -> AutopsyAvatar;
+
+	CodexBrainPt1 -> ContactCodexCoordinates -> PsiGateItem -> UpgradeShadowChamberCelestial -> ResearchCelestialGate -> AutopsyAvatar;
+
+	ResearchStasisSuit -> AutopsyAvatar;
+
+	AutopsyAvatar -> FinalMission;
+}
+
