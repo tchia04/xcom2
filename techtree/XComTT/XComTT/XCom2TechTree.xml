@@ -7,6 +7,7 @@
     <type name="items" background="#99D9EA" text="#000000" />
     <type name="drop" background="#A000A0" text="#000000" />
     <type name="misc" background="#000000" text="#ffffff" />
+    <type name="skill" background="#CCCCCC" text="#000000" />
   </itemTypes>
   <difficultyColors>
     <difficultyColor difficulty="0" background="#ffffff" text="" />
@@ -54,11 +55,132 @@
     <item name="ContactBlacksiteVialCoordinates" title="Investigate the Blacksite Vial Coordinates" type="misc">
       <parent>BlacksiteData</parent>
     </item>
-    
+
     <item name="ContactCodexCoordinates" title="Investigate Codex Brain Coordinates" type="misc">
       <parent>CodexBrainPt1</parent>
     </item>
 
+    <!-- Guerilla Training School -->
+    <item name="VultureUnlock" title="Vulture" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="75"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="100"/>
+      </cost>
+    </item>
+      
+    <item name="HuntersInstinctUnlock" title="Ranger: Hunter's Instinct&lt;br/&gt;(Req: Ranger Captain)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="75"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="200"/>
+      </cost>
+    </item>
+    
+    <item name="HitWhereItHurtsUnlock" title="Sharpshooter: Deadshot&lt;br/&gt;(Req: Sharpshooter Captain)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="75"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="200"/>
+      </cost>
+    </item>
+    
+    <item name="CoolUnderPressureUnlock" title="Specialist: Cool under Pressure&lt;br/&gt;(Req: Specialist Captain)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="75"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="200"/>
+      </cost>
+    </item>
+    
+    <item name="BiggestBoomsUnlock" title="Grenadier: Biggest Booms&lt;br/&gt;(Req: Grenadier Captain)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="75"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="200"/>
+      </cost>
+    </item>
+    
+    <item name="LightningStrikeUnlock" title="Lightning Strikes&lt;br/&gt;(Req: Sargeant)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="100"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="125"/>
+      </cost>
+    </item>
+    
+    <item name="WetWorkUnlock" title="Wet Work&lt;br/&gt;(Req: Sargeant)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="125"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="150"/>
+      </cost>
+    </item>
+    
+    <item name="SquadSizeIUnlock" title="Squad Size I&lt;br/&gt;(Req: Sargeant)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="50"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="100"/>
+      </cost>
+    </item>
+    
+    <item name="SquadSizeIIUnlock" title="Squad Size II&lt;br/&gt;(Req: Captain)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="75"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="150"/>
+      </cost>
+    </item>
+    
+    <item name="VengeanceUnlock" title="Vengeance&lt;br/&gt;(Req: Lieutenant)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="100"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="125"/>
+      </cost>
+    </item>
+    
+    <item name="IntegratedWarfareUnlock" title="Integrated Warfare&lt;br/&gt;(Req: Lieutenant)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="150"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="200"/>
+      </cost>
+    </item>
+    
+    <item name="StayWithMeUnlock" title="Stay With Me&lt;br/&gt;(Req: Major)" type="skill">
+      <parent>OfficerTrainingSchool</parent>
+      <cost difficulty="0">
+        <costItem type="Supplies" value="150"/>
+      </cost>
+      <cost difficulty="3">
+        <costItem type="Supplies" value="175"/>
+      </cost>
+    </item>
+    
     <!-- Stuff -->
     <item name="EquipPCS" title="Equip Personal Combat Sims&lt;br/&gt;(Min. Squaddie Rank)" type="misc">
       <parent>OfficerTrainingSchool</parent>
@@ -1334,6 +1456,7 @@
         <costItem type="Engineers" value="2"/>
       </cost>
       <cost difficulty="3">
+        <!-- TODO: VALIDATE THIS -->
         <costItem type="Supplies" value="80"/>
         <costItem type="Alien Alloy" value="10"/>
         <costItem type="Elerium" value="25"/>
@@ -1604,7 +1727,7 @@
         <costItem type="Viper Corpse" value="1" />
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="10" />
+        <costItem type="Supplies" value="100" />
         <costItem type="Viper Corpse" value="2" />
       </cost>
     </item>
