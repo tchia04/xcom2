@@ -16,15 +16,47 @@
   </difficultyColors>
   <items>
     <!-- Missions -->
-    <!-- <item name="T0_M1_WelcomeToLabs" title="Operation Gatecrasher" type="misc"></item>-->
-    <item name="T2_M0_CompleteGuerillaOps" title="T2_M0_CompleteGuerillaOps" type="misc">
-      <!--  <parent>T0_M1_WelcomeToLabs</parent>-->
+    <item name="T0_M1_WelcomeToLabs" title="Operation Gatecrasher" type="misc"></item>
+    <item name="T2_M0_CompleteGuerillaOps" title="Complete Guerilla Ops" type="misc">
+      <parent>T0_M1_WelcomeToLabs</parent>
     </item>
-    <item name="T5_M2_BroadcastTheTruth" title="T5_M2_BroadcastTheTruth" type="misc">
+    <item name="T5_M2_BroadcastTheTruth" title="Capture ADVENT Radio Tower&lt;br/&gt;(Point of no return)" type="misc">
       <parent>AutopsyAdventPsiWitch</parent>
     </item>
-    <item name="T5_M3_FinalMission" title="T5_M3_FinalMission" type="misc">
+    <item name="T5_M3_FinalMission" title="Final Mission" type="misc">
       <parent>T5_M2_BroadcastTheTruth</parent>
+    </item>
+
+    <item name="UseSkulljackOnAdventOfficer" title="Use Skulljack on ADVENT Officer" type="misc">
+      <parent>Skulljack</parent>
+    </item>
+
+    <item name="KillCodex" title="Kill a Codex" type="misc">
+      <parent>UseSkulljackOnAdventOfficer</parent>
+    </item>
+
+    <item name="UseSkulljackOnCodex" title="Use Skulljack on Codex" type="misc">
+      <parent>CodexBrainPt2</parent>
+    </item>
+
+    <item name="NeutralizeAvatar" title="Neutralize Avatar" type="misc">
+      <parent>UseSkulljackOnCodex</parent>
+    </item>
+
+    <item name="BlacksiteMission" title="Complete the ADVENT Blacksite Mission" type="misc">
+      <parent>ContactBlacksiteRegion</parent>
+    </item>
+
+    <item name="ContactBlacksiteRegion" title="Make Contact with Blacksite Region" type="misc">
+      <parent>ResistanceCommunications</parent>
+    </item>
+
+    <item name="ContactBlacksiteVialCoordinates" title="Investigate the Blacksite Vial Coordinates" type="misc">
+      <parent>BlacksiteData</parent>
+    </item>
+    
+    <item name="ContactCodexCoordinates" title="Investigate Codex Brain Coordinates" type="misc">
+      <parent>CodexBrainPt1</parent>
     </item>
 
     <!-- Stuff -->
@@ -40,8 +72,8 @@
     <item name="RadioRelays" title="Radio Relays" type="misc">
       <parent>ResistanceRadio</parent>
     </item>
-    <item name="BlackMarket" title="Black Market" type="misc">
-      <!--  <parent>T0_M1_WelcomeToLabs</parent>-->
+    <item name="BlackMarket" title="Black Market&lt;br/&gt;(Random Rumor, 25-35 days in)" type="misc">
+      <parent>T0_M1_WelcomeToLabs</parent>
     </item>
     <item name="FacilityLeadDrop" title="Facility Lead (Item Drop)" type="drop">
     </item>
@@ -49,14 +81,17 @@
     </item>
     <item name="AlienDatapadDrop" title="Alien Data Cache (Item Drop)" type="drop">
     </item>
+    <item name="SeeEnemyInfo" title="See which and how many enemies are in a mission" type="misc">
+      <parent>ShadowChamber</parent>
+    </item>
 
     <!-- Buildings -->
     <item name="Engineering" title="Engineering" type="building">
-      <!--  <parent>T0_M1_WelcomeToLabs</parent>-->
+      <parent>T0_M1_WelcomeToLabs</parent>
     </item>
 
     <item name="Workshop" title="Workshop" type="building">
-      <!--  <parent>T0_M1_WelcomeToLabs</parent>-->
+      <parent>T0_M1_WelcomeToLabs</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="125"/>
         <costItem type="Upkeep" value="35"/>
@@ -104,7 +139,7 @@
     </item>
 
     <item name="Laboratory" title="Laboratory" type="building">
-      <!--  <parent>T0_M1_WelcomeToLabs</parent>-->
+      <parent>T0_M1_WelcomeToLabs</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="125"/>
         <costItem type="Upkeep" value="35"/>
@@ -152,7 +187,7 @@
     </item>
 
     <item name="PowerRelay" title="Power Relay" type="building">
-      <!--  <parent>T0_M1_WelcomeToLabs</parent>-->
+      <parent>T0_M1_WelcomeToLabs</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="80"/>
         <costItem type="Upkeep" value="10"/>
@@ -229,7 +264,7 @@
     </item>
 
     <item name="OfficerTrainingSchool" title="Guerrilla Tactics School" type="building">
-      <!--  <parent>T0_M1_WelcomeToLabs</parent>-->
+      <parent>T0_M1_WelcomeToLabs</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="85"/>
         <costItem type="Upkeep" value="25"/>
@@ -299,7 +334,7 @@
         <costItem type="Power" value="5"/>
       </cost>
     </item>
-    
+
     <item name="ShadowChamber_CelestialGate" title="Psionic Gate" type="building">
       <parent>ShadowChamber</parent>
       <parent>PsiGateArtifact</parent>
@@ -419,7 +454,7 @@
         <costItem type="Upkeep" value="25"/>
         <costItem type="Power" value="3"/>
       </cost>
-      
+
     </item>
 
     <item name="ResistanceComms_AdditionalCommStation" title="Additional Comm Station" type="building">
@@ -446,7 +481,7 @@
         <costItem type="Power" value="4"/>
       </cost>
     </item>
-    
+
     <item name="PsiChamber" title="Psi Lab" type="building">
       <parent>Psionics</parent>
       <cost difficulty="0">
@@ -474,7 +509,7 @@
         <costItem type="Power" value="5"/>
       </cost>
     </item>
-    
+
     <item name="PsiChamber_SecondCell" title="Second Cell" type="building">
       <parent>PsiChamber</parent>
       <cost difficulty="0">
@@ -502,10 +537,10 @@
         <costItem type="Power" value="5"/>
       </cost>
     </item>
-    
+
     <!-- Weapons -->
     <item name="ModularWeapons" title="Modular Weapons" type="research">
-      <!--  <parent>T0_M1_WelcomeToLabs</parent>-->
+      <parent>T0_M1_WelcomeToLabs</parent>
     </item>
 
     <item name="GaussWeapons" title="Gauss Weapons" type="research">
@@ -515,7 +550,7 @@
     <item name="MagnetizedWeapons" title="Magnetized Weapons" type="research">
       <parent>ModularWeapons</parent>
     </item>
-    
+
     <item name="PlasmaRifle" title="Plasma Rifle" type="research">
       <parent>Tech_Elerium</parent>
       <cost difficulty="0">
@@ -535,7 +570,7 @@
         <costItem type="Elerium" value="15"/>
       </cost>
     </item>
-    
+
     <item name="HeavyPlasma" title="Beam Cannon" type="research">
       <parent>PlasmaRifle</parent>
       <cost difficulty="0">
@@ -555,7 +590,7 @@
         <costItem type="Elerium" value="10"/>
       </cost>
     </item>
-    
+
     <item name="PlasmaSniper" title="Plasma Lance" type="research">
       <parent>PlasmaRifle</parent>
       <cost difficulty="0">
@@ -575,7 +610,7 @@
         <costItem type="Elerium" value="10"/>
       </cost>
     </item>
-    
+
     <item name="AlloyCannon" title="Storm Gun" type="research">
       <parent>PlasmaRifle</parent>
       <cost difficulty="0">
@@ -591,10 +626,10 @@
         <costItem type="Alien Alloy" value="20"/>
       </cost>
     </item>
-   
+
     <!-- Armor -->
     <item name="HybridMaterials" title="Hybrid Materials" type="research">
-      <!--  <parent>T0_M1_WelcomeToLabs</parent>-->
+      <parent>T0_M1_WelcomeToLabs</parent>
       <cost difficulty="0">
         <costItem type="ADVENT Trooper Corpse" value="2"/>
       </cost>
@@ -736,7 +771,7 @@
         <costItem type="Elerium Core" value="1"/>
       </cost>
     </item>
-    
+
     <item name="PoweredArmor" title="Powered Armor" type="research">
       <parent>Tech_Elerium</parent>
       <cost difficulty="0">
@@ -756,7 +791,7 @@
         <costItem type="Elerium" value="10"/>
       </cost>
     </item>
-    
+
     <!-- Items -->
     <item name="APRounds" title="A.P. Rounds" type="items">
       <parent>ExperimentalAmmo</parent>
@@ -813,7 +848,7 @@
     <item name="StasisVest" title="Stasis Vest" type="items">
       <parent>ExperimentalArmor</parent>
     </item>
-    
+
     <item name="CombatStims" title="Overdrive Serum" type="items">
       <parent>AutopsyBerserker</parent>
       <cost difficulty="0">
@@ -869,7 +904,8 @@
         <costItem type="Supplies" value="65" />
       </cost>
       <cost difficulty="3">
-        <costItem type="Chryssalid Corpse" value="2" /> <!-- TODO: Should be 3 Corpses and 60 Supplies -->
+        <costItem type="Chryssalid Corpse" value="2" />
+        <!-- TODO: Should be 3 Corpses and 60 Supplies -->
         <costItem type="Supplies" value="65" />
       </cost>
     </item>
@@ -1050,7 +1086,7 @@
         <costItem type="Supplies" value="250"/>
         <costItem type="Alien Alloy" value="20"/>
         <costItem type="Elerium" value="10"/>
-        <costItem type="Engineers" value="4"/>/>
+        <costItem type="Engineers" value="4"/>
       </cost>
       <cost difficulty="2">
         <costItem type="Supplies" value="250"/>
@@ -1331,7 +1367,8 @@
       </cost>
       <cost difficulty="3">
         <costItem type="Supplies" value="120"/>
-        <costItem type="Elerium" value="45"/> <!-- Bug in game? Shows up as 30 and 15 Elerium Crystals needed -->
+        <costItem type="Elerium" value="45"/>
+        <!-- Bug in game? Shows up as 30 and 15 Elerium Crystals needed -->
         <costItem type="Gatekeeper Corpse" value="2"/>
         <costItem type="Engineers" value="3"/>
       </cost>
@@ -1388,7 +1425,7 @@
         <costItem type="Engineers" value="1"/>
       </cost>
     </item>
-    
+
     <item name="MediumPoweredArmor_Schematic" title="Warden Armor" type="items">
       <parent>PoweredArmor</parent>
       <cost difficulty="0">
@@ -1630,7 +1667,7 @@
         <costItem type="Supplies" value="125" />
       </cost>
     </item>
-    
+
     <!-- Techs/Misc -->
     <item name="ExperimentalGrenade" title="Experimental Grenade (r)" type="proving">
       <parent>ProvingGrounds</parent>
@@ -1715,7 +1752,7 @@
         <costItem type="Elerium Core" value="1" />
       </cost>
     </item>
-    
+
     <item name="BattlefieldMedicine" title="Battlefield Medicine" type="proving">
       <parent>AutopsyViper</parent>
       <cost difficulty="0">
@@ -1739,7 +1776,7 @@
         <costItem type="Viper Corpse" value="3" />
       </cost>
     </item>
-    
+
     <item name="PlasmaGrenade" title="Plasma Grenade" type="proving">
       <parent>AutopsyMuton</parent>
       <cost difficulty="0">
@@ -1795,7 +1832,7 @@
         <costItem type="Elerium Core" value="1" />
       </cost>
     </item>
-    
+
     <item name="Skullmining" title="Skullmining" type="proving">
       <parent>Skulljack</parent>
       <cost difficulty="0">
@@ -1815,7 +1852,7 @@
         <costItem type="Elerium Core" value="1" />
       </cost>
     </item>
-    
+
     <item name="Tech_Elerium" title="Elerium" type="research">
       <parent>GaussWeapons</parent>
       <parent>PlatedArmor</parent>
@@ -1850,7 +1887,7 @@
     </item>
 
     <item name="AlienBiotech" title="Alien Biotech" type="research">
-      <!--  <parent>T0_M1_WelcomeToLabs</parent>-->
+      <parent>T0_M1_WelcomeToLabs</parent>
     </item>
 
     <item name="Tech_AlienFacilityLead" title="Facility Lead (r)" type="research">
@@ -2164,7 +2201,7 @@
         <costItem type="Corpse" value="1 (9 for Instant)" />
       </cost>
     </item>
-    
+
     <item name="ResistanceCommunications" title="Resistance Communications" type="research">
       <parent>T2_M0_CompleteGuerillaOps</parent>
     </item>
@@ -2184,22 +2221,26 @@
     </item>
 
     <item name="BlacksiteDataCube" title="Blacksite Vial (item)" type="drop">
-      <!-- TODO       <parent></parent> -->
+      <parent>BlacksiteMission</parent>
     </item>
 
     <item name="AutopsyAdventPsiWitch" title="Avatar Autopsy" type="research">
-      <parent>BlacksiteData</parent>
       <parent>PsiGate</parent>
       <parent>ForgeStasisSuit</parent>
+      <parent>NeutralizeAvatar</parent>
     </item>
 
     <item name="PsiGateArtifact" title="Psionic Gate (Item)" type="drop">
-      
+      <parent>ContactCodexCoordinates</parent>
     </item>
 
-    <item name="CorpseCyberus" title="Codex Brain (Item)" type="drop"></item>
+    <item name="CorpseCyberus" title="Codex Brain (Item)" type="drop">
+      <parent>KillCodex</parent>
+    </item>
 
-    <item name="StasisSuitComponent" title="ADVENT Stasis Suit (Item)" type="drop"></item>
+    <item name="StasisSuitComponent" title="ADVENT Stasis Suit (Item)" type="drop">
+      <parent>ContactBlacksiteVialCoordinates</parent>
+    </item>
 
     <item name="ForgeStasisSuit" title="Recovered ADVENT Stasis Suit" type="research">
       <parent>StasisSuitComponent</parent>
@@ -2227,7 +2268,6 @@
     </item>
 
     <item name="CodexBrainPt1" title="Codex Brain" type="research">
-      <parent>AlienBiotech</parent>
       <parent>ShadowChamber</parent>
       <parent>CorpseCyberus</parent>
       <cost difficulty="0">
@@ -2263,6 +2303,6 @@
     <item name="Bluescreen" title="Bluescreen Protocol" type="proving">
       <parent>AutopsyAdventMEC</parent>
     </item>
-    
+
   </items>
 </tree>
