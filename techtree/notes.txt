@@ -48,3 +48,36 @@ Grenadier: Biggest Booms (75 Supplies, Grenadier Captain)
 Ranger: Hunter's Instinct (75 Supplies, Ranger Captain)
 Sharpshooter: Deadshot (75 Supplies, Sharpshooter Captain)
 Specialist: Cool under Pressure (75 Supplies, Specialist Captain)
+
+
+Regional Bonuses
+
+https://www.reddit.com/r/Xcom/comments/454l3z/the_armed_to_the_teeth_regional_bonus_is_silly_so/
+
+    Spy Ring ............................ +25% for Intel rewards
+
+    Hidden Reserves .............. +5 Power for the Avenger
+
+    To Serve Mankind ............. Recruits only cost 10 Supplies
+
+    Lock and Load .................. PCS & Weapon Upgrades may be re-used
+
+    Pursuit of Knowledge ...... +20% discovery speed if you have a Research Lab facility
+
+    Spare Parts ....................... -50% costs for all "Proving Grounds" projects
+
+    Armed to the Teeth .......... All primary weapons gain an additional upgrade slot
+
+    Under the Table ............... Black Market pays 33% more for items
+
+    Suit up! ............................. All Armor & Vest experimental projects finish instantly
+
+    All In .................................. Resistance sends 20% more resources
+
+    Quid Pro Quo ................... Black Market Items cost 25% less Intel
+
+    Fire When Ready .............. All Ammo, Grenade, and Weapon experimental finish instantly
+
+    Future Combat ................. All GTS Tactic costs reduced by 50%
+
+    Helping Hand ................... Workshops provide an additional Engineer when built
