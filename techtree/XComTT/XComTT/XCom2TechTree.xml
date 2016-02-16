@@ -1047,8 +1047,8 @@
         <costItem type="Supplies" value="30" />
       </cost>
       <cost difficulty="3">
-        <costItem type="ADVENT Trooper Corpse" value="3" />
-        <costItem type="Supplies" value="60" />
+        <costItem type="ADVENT Trooper Corpse" value="2" />
+        <costItem type="Supplies" value="30" />
       </cost>
     </item>
 
@@ -1674,7 +1674,7 @@
         <costItem type="Supplies" value="25" />
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="40" />
+        <costItem type="Supplies" value="25" />
       </cost>
     </item>
 
@@ -1707,7 +1707,7 @@
         <costItem type="Supplies" value="35" />
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="60" />
+        <costItem type="Supplies" value="35" />
       </cost>
     </item>
 
@@ -1744,7 +1744,7 @@
         <costItem type="Supplies" value="35" />
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="50" />
+        <costItem type="Supplies" value="35" />
       </cost>
     </item>
 
