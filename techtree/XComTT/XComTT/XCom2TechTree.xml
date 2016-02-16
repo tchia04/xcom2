@@ -21,7 +21,7 @@
     <item name="T2_M0_CompleteGuerillaOps" title="Complete Guerilla Ops" type="misc">
       <parent>T0_M1_WelcomeToLabs</parent>
     </item>
-    <item name="T5_M2_BroadcastTheTruth" title="Capture ADVENT Radio Tower&lt;br/&gt;(Point of no return)" type="misc">
+    <item name="T5_M2_BroadcastTheTruth" title="Assault ADVENT Broadcast Tower&lt;br/&gt;(Point of no return)" type="misc">
       <parent>AutopsyAdventPsiWitch</parent>
     </item>
     <item name="T5_M3_FinalMission" title="Final Mission" type="misc">
@@ -61,7 +61,7 @@
     </item>
 
     <!-- Guerilla Training School -->
-    <item name="VultureUnlock" title="Vulture" type="skill">
+    <item name="VultureUnlock" title="Vulture&lt;br/&gt;(Enemies drop 1 extra loot)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="75"/>
@@ -71,7 +71,7 @@
       </cost>
     </item>
       
-    <item name="HuntersInstinctUnlock" title="Ranger: Hunter's Instinct&lt;br/&gt;(Req: Ranger Captain)" type="skill">
+    <item name="HuntersInstinctUnlock" title="Ranger: Hunter's Instinct&lt;br/&gt;(Req: Ranger Captain, +3 Damage against flanked enemies)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="75"/>
@@ -81,7 +81,7 @@
       </cost>
     </item>
     
-    <item name="HitWhereItHurtsUnlock" title="Sharpshooter: Deadshot&lt;br/&gt;(Req: Sharpshooter Captain)" type="skill">
+    <item name="HitWhereItHurtsUnlock" title="Sharpshooter: Deadshot&lt;br/&gt;(Req: Sharpshooter Captain, +10% Crit Chance)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="75"/>
@@ -91,7 +91,7 @@
       </cost>
     </item>
     
-    <item name="CoolUnderPressureUnlock" title="Specialist: Cool under Pressure&lt;br/&gt;(Req: Specialist Captain)" type="skill">
+    <item name="CoolUnderPressureUnlock" title="Specialist: Cool under Pressure&lt;br/&gt;(Req: Specialist Captain, +10 Aim and able to crit on Overwatch/Reaction shots)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="75"/>
@@ -101,7 +101,7 @@
       </cost>
     </item>
     
-    <item name="BiggestBoomsUnlock" title="Grenadier: Biggest Booms&lt;br/&gt;(Req: Grenadier Captain)" type="skill">
+    <item name="BiggestBoomsUnlock" title="Grenadier: Biggest Booms&lt;br/&gt;(Req: Grenadier Captain, Explosives can crit)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="75"/>
@@ -111,7 +111,7 @@
       </cost>
     </item>
     
-    <item name="LightningStrikeUnlock" title="Lightning Strikes&lt;br/&gt;(Req: Sargeant)" type="skill">
+    <item name="LightningStrikeUnlock" title="Lightning Strike&lt;br/&gt;(Req: Sargeant, +3 mobility for first 2 turns while concealed)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="100"/>
@@ -121,7 +121,7 @@
       </cost>
     </item>
     
-    <item name="WetWorkUnlock" title="Wet Work&lt;br/&gt;(Req: Sargeant)" type="skill">
+    <item name="WetWorkUnlock" title="Wet Work&lt;br/&gt;(Req: Sargeant, +25% XP from kills)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="125"/>
@@ -131,7 +131,7 @@
       </cost>
     </item>
     
-    <item name="SquadSizeIUnlock" title="Squad Size I&lt;br/&gt;(Req: Sargeant)" type="skill">
+    <item name="SquadSizeIUnlock" title="Squad Size I&lt;br/&gt;(Req: Sargeant, Squad Size increased by 1)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="50"/>
@@ -141,7 +141,7 @@
       </cost>
     </item>
     
-    <item name="SquadSizeIIUnlock" title="Squad Size II&lt;br/&gt;(Req: Captain)" type="skill">
+    <item name="SquadSizeIIUnlock" title="Squad Size II&lt;br/&gt;(Req: Captain, Squad Size increased by 1)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="75"/>
@@ -151,7 +151,7 @@
       </cost>
     </item>
     
-    <item name="VengeanceUnlock" title="Vengeance&lt;br/&gt;(Req: Lieutenant)" type="skill">
+    <item name="VengeanceUnlock" title="Vengeance&lt;br/&gt;(Req: Lieutenant, Random Bonus for 2 turns if squadmate&lt;br/&gt;is critically wounded or killed)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="100"/>
@@ -161,17 +161,17 @@
       </cost>
     </item>
     
-    <item name="IntegratedWarfareUnlock" title="Integrated Warfare&lt;br/&gt;(Req: Lieutenant)" type="skill">
+    <item name="IntegratedWarfareUnlock" title="Integrated Warfare&lt;br/&gt;(Req: Lieutenant, Significantly improve PCS Bonus)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="150"/>
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="200"/>
+        <costItem type="Supplies" value="150"/>
       </cost>
     </item>
     
-    <item name="StayWithMeUnlock" title="Stay With Me&lt;br/&gt;(Req: Major)" type="skill">
+    <item name="StayWithMeUnlock" title="Stay With Me&lt;br/&gt;(Req: Major, Double the chance of bleeding out instead of dying)" type="skill">
       <parent>OfficerTrainingSchool</parent>
       <cost difficulty="0">
         <costItem type="Supplies" value="150"/>
@@ -254,7 +254,7 @@
         <costItem type="Power" value="2"/>
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="150"/>
+        <costItem type="Supplies" value="100"/>
         <costItem type="Upkeep" value="40"/>
         <costItem type="Power" value="2"/>
       </cost>
@@ -302,7 +302,7 @@
         <costItem type="Power" value="3"/>
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="175"/>
+        <costItem type="Supplies" value="125"/>
         <costItem type="Upkeep" value="40"/>
         <costItem type="Power" value="3"/>
       </cost>
@@ -350,7 +350,7 @@
         <costItem type="Power" value="+2"/>
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="100"/>
+        <costItem type="Supplies" value="80"/>
         <costItem type="Upkeep" value="10"/>
         <costItem type="Power" value="+2"/>
       </cost>
@@ -378,8 +378,8 @@
         <costItem type="Power" value="+6"/>
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="300"/>
-        <costItem type="Elerium" value="35"/>
+        <costItem type="Supplies" value="150"/>
+        <costItem type="Elerium" value="20"/>
         <costItem type="Upkeep" value="20"/>
         <costItem type="Power" value="+6"/>
       </cost>
@@ -427,7 +427,7 @@
         <costItem type="Power" value="2"/>
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="125"/>
+        <costItem type="Supplies" value="75"/>
         <costItem type="Upkeep" value="10"/>
         <costItem type="Power" value="2"/>
       </cost>
@@ -476,7 +476,7 @@
         <costItem type="Power" value="4"/>
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="300"/>
+        <costItem type="Supplies" value="200"/>
         <costItem type="Upkeep" value="50"/>
         <costItem type="Power" value="4"/>
       </cost>
@@ -598,7 +598,7 @@
         <costItem type="Power" value="4"/>
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="190"/>
+        <costItem type="Supplies" value="125"/>
         <costItem type="Upkeep" value="35"/>
         <costItem type="Power" value="4"/>
       </cost>
@@ -653,8 +653,8 @@
         <costItem type="Power" value="5"/>
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="300"/>
-        <costItem type="Elerium" value="25"/>
+        <costItem type="Supplies" value="225"/>
+        <costItem type="Elerium" value="15"/>
         <costItem type="Upkeep" value="50"/>
         <costItem type="Power" value="5"/>
       </cost>
@@ -986,8 +986,8 @@
         <costItem type="Supplies" value="35" />
       </cost>
       <cost difficulty="3">
-        <costItem type="Berserker Corpse" value="2" />
-        <costItem type="Supplies" value="60" />
+        <costItem type="Berserker Corpse" value="1" />
+        <costItem type="Supplies" value="35" />
       </cost>
     </item>
 
@@ -1007,7 +1007,7 @@
       </cost>
       <cost difficulty="3">
         <costItem type="Faceless Corpse" value="2" />
-        <costItem type="Supplies" value="60" />
+        <costItem type="Supplies" value="50" />
       </cost>
     </item>
 
@@ -1027,7 +1027,6 @@
       </cost>
       <cost difficulty="3">
         <costItem type="Chryssalid Corpse" value="2" />
-        <!-- TODO: Should be 3 Corpses and 60 Supplies -->
         <costItem type="Supplies" value="65" />
       </cost>
     </item>
@@ -1064,7 +1063,7 @@
         <costItem type="Supplies" value="30" />
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="50" />
+        <costItem type="Supplies" value="30" />
       </cost>
     </item>
 
@@ -1471,28 +1470,27 @@
         <costItem type="Supplies" value="200"/>
         <costItem type="Alien Alloy" value="10"/>
         <costItem type="Elerium" value="15"/>
-        <costItem type="Gatekeeper Corpse" value="1"/>
+        <costItem type="Gatekeeper Shell" value="1"/>
         <costItem type="Engineers" value="3"/>
       </cost>
       <cost difficulty="1">
         <costItem type="Supplies" value="200"/>
         <costItem type="Alien Alloy" value="10"/>
         <costItem type="Elerium" value="15"/>
-        <costItem type="Gatekeeper Corpse" value="1"/>
+        <costItem type="Gatekeeper Shell" value="1"/>
         <costItem type="Engineers" value="3"/>
       </cost>
       <cost difficulty="2">
         <costItem type="Supplies" value="200"/>
         <costItem type="Alien Alloy" value="10"/>
         <costItem type="Elerium" value="15"/>
-        <costItem type="Gatekeeper Corpse" value="1"/>
+        <costItem type="Gatekeeper Shell" value="1"/>
         <costItem type="Engineers" value="3"/>
       </cost>
       <cost difficulty="3">
         <costItem type="Supplies" value="120"/>
         <costItem type="Elerium" value="45"/>
-        <!-- Bug in game? Shows up as 30 and 15 Elerium Crystals needed -->
-        <costItem type="Gatekeeper Corpse" value="2"/>
+        <costItem type="Gatekeeper Shell" value="2"/>
         <costItem type="Engineers" value="3"/>
       </cost>
     </item>
@@ -1592,8 +1590,8 @@
         <costItem type="Supplies" value="45" />
       </cost>
       <cost difficulty="3">
-        <costItem type="Sectoid Corpse" value="2" />
-        <costItem type="Supplies" value="60" />
+        <costItem type="Sectoid Corpse" value="1" />
+        <costItem type="Supplies" value="45" />
       </cost>
     </item>
 
@@ -1727,8 +1725,8 @@
         <costItem type="Viper Corpse" value="1" />
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="100" />
-        <costItem type="Viper Corpse" value="2" />
+        <costItem type="Supplies" value="50" />
+        <costItem type="Viper Corpse" value="1" />
       </cost>
     </item>
 
@@ -1787,7 +1785,7 @@
         <costItem type="Supplies" value="100" />
       </cost>
       <cost difficulty="3">
-        <costItem type="Supplies" value="125" />
+        <costItem type="Supplies" value="100" />
       </cost>
     </item>
 
@@ -2425,6 +2423,9 @@
 
     <item name="Bluescreen" title="Bluescreen Protocol" type="proving">
       <parent>AutopsyAdventMEC</parent>
+      <cost difficulty="3">
+        <costItem type="Elerium Core" value="1" />
+      </cost>
     </item>
 
   </items>
